@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PijamasInfinite</title>
+    <link rel="stylesheet" href="modelo.css">
+     <!-- Agrega el siguiente código dentro de la etiqueta <head> -->
+        <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <style>
+        /* Variables CSS para fácil personalización */
+        :root {
+            --primary-color: #F8A2B3;
+            --secondary-color: #2c3e50;
+            --accent-color: rgb(255, 255, 255);
+            --light-color: #f8f9fa;
+            --dark-color: #F8A2B3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            margin-right: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Cover Section */
+        .cover {
+            height: 80vh;
+            background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('img/Portada.png') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .cover-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cover-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 1rem;
+        }
+
+        .featured-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image1 {
+            height: 200px;
+            background:  url('img/pijamas.png') center/cover;
+        }
+
+        .product-image2 {
+            height: 200px;
+            background:  url('img/Intermedia.png') center/cover;
+        }
+
+        .product-image3 {
+            height: 200px;
+            background:  url('img/pijamacorto.png') center/cover;
+        }
+
+        .product-image4 {
+            height: 200px;
+            background:  url('img/CAMISOLIN\ 1.png') center/cover;
+        }
+
+        .product-info {
+            padding: 1rem;
+        }
+
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info p {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark-color);
+            color: #333;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        
+
+        
+
+
+        .copyright {
+            text-align: center;
+        }
+
+        .header-mobile {
+            display: none;
+        }
+
+        .modal {
+            display: none;
+        }
+
+
+        .modelos2 {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .modelos {
+                display: none;
+            }
+
+
+            .nav-links {
+                display: none;
+            }
+
+            .cover-content h1 {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                /* Asegura que los elementos estén centrados verticalmente */
+            }
+
+            /* Oculta la versión de escritorio */
+            .headerpc {
+                display: none;
+            }
+
+            .header-mobile {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                /* Centra los elementos horizontalmente */
+                align-items: center;
+                /* Centra los elementos verticalmente */
+                gap: 20px;
+                /* Espaciado entre logo y menú */
+            }
+
+            .menu-toggle {
+                margin-left: 0;
+                /* Asegura que no se desplace hacia la derecha */
+
+            }
+
+            .logo {
+                height: 50px;
+            }
+
+            .menu-icon img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .menu-toggle {
+                background: none;
+                border: none;
+                cursor: pointer;
+                margin-left: auto;
+                /* Alinea el menú hamburguesa a la derecha */
+            }
+
+            /* Estilo del Modal */
+            .modal {
+                display: none;
+                /* Oculto por defecto */
+                position: fixed;
+                z-index: 1000;
+                /* Asegúrate de que esté por encima de otros elementos */
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.4);
+                /* Fondo semitransparente */
+            }
+
+            .modal-content {
+                display: block;
+                background-color: #F8A2B3;
+                border: 2px solid #FDE1E7;
+                color: #333;
+                margin: 0% auto;
+                padding: 20px;
+                margin-left: 29.9%;
+                width: 70%;
+                position: relative;
+                /* Asegura que los elementos internos se posicionen respecto a este contenedor */
+            }
+
+            .modal-content a {
+                color: #333;
+                /* Cambia el color del texto */
+                text-decoration: none;
+                /* Elimina el subrayado */
+            }
+
+            .modal-content a:hover {
+                color: #F8A2B3;
+                /* Cambia el color al pasar el cursor */
+                text-decoration: underline;
+                /* Opcional: subrayado al pasar el cursor */
+            }
+
+
+            .modal-content ul {
+                list-style-type: none;
+                /* Elimina los puntos */
+                padding: 0;
+                margin: 0;
+                text-align: left;
+                /* Opcional: centra los elementos de la lista */
+            }
+
+
+            .modal-content li {
+                display: flex;
+                /* Alinea íconos y texto horizontalmente */
+                align-items: center;
+                /* Centra verticalmente la imagen con el texto */
+                margin-bottom: 20px;
+                /* Espaciado entre los elementos de la lista */
+            }
+
+            .modal-content img {
+                width: 24px;
+                /* Ajusta el tamaño del ícono */
+                height: 24px;
+                /* Ajusta el tamaño del ícono */
+                margin-right: 10px;
+                /* Espacio entre ícono y texto */
+                vertical-align: middle;
+                /* Centra mejor dentro de su línea base */
+            }
+
+            .modal-content a {
+                display: inline-block;
+                /* Asegura un buen comportamiento en flexbox */
+                line-height: 1.2;
+                /* Ajusta el espaciado entre las líneas del texto */
+                font-size: 18px;
+                /* Tamaño uniforme del texto */
+                color: #333;
+                /* Estilo del texto */
+                text-decoration: none;
+                /* Sin subrayado */
+            }
+
+
+
+
+            .adorno {
+                border: none;
+                margin: 10px 0;
+                /* Espaciado entre elementos */
+                height: 1px;
+                /* Altura de la línea */
+                /* background-color: #fd5e7e;  */
+                background-color: #292929;
+                width: 100%;
+                /* Abarca todo el ancho */
+            }
+
+
+
+            .close {
+                color: #333;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                position: absolute;
+                /* Ahora puedes mover la 'X' con precisión */
+                top: 10px;
+                /* Ajusta la posición vertical */
+                right: 10px;
+                /* Ajusta la posición horizontal */
+                cursor: pointer;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .list-container {
+                margin-top: 50px;
+                /* Da espacio entre la 'X' y la lista */
+            }
+
+            .PC {
+                display: none;
+            }
+
+            /* MODELOS */
+
+            .modelos2 {
+                display: flex;
+                flex-direction: column;
+                /* Alinea los elementos en columna */
+                align-items: center;
+                /* Centra los elementos horizontalmente */
+                width: 100%;
+                /* Ajusta el ancho del contenedor para que coincida con el ancho de los elementos hijos */
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 10%;
+            }
+
+            .modelos2 img {
+                width: 100%;
+                /* Asegúrate de que la imagen ocupe el ancho completo del contenedor */
+                height: auto;
+
+            }
+
+            .textoycarrito1 {
+                background-color: #FDE1E7;
+                color: #333;
+                padding: 15px;
+                width: 100%;
+                /* Asegúrate de que el ancho del contenido de texto coincida con el ancho del contenedor */
+                text-align: center;
+            }
+
+            .boton1 {
+                background-color: #F8A2B3;
+                color: #333333;
+                border: none;
+
+                border-radius: 25px;
+                padding: 10px 20px;
+                cursor: pointer;
+                text-align: center;
+                font-size: larger;
+                transition: background-color 0.3s ease;
+
+                margin: auto 0;
+                margin-top: 0.4rem; /* Empujar el botón hacia abajo */
+                /* Centrar el botón horizontalmente */
+            }
+
+            .boton1:hover {
+                background-color: #FBC1CC;
+            }
+
+            
+
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="PC">
+            <div class="logo-container">
+                <img src="img/Logo.png" alt="Logo" class="logo">
+
+            </div>
+            <ul class="nav-links ">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="talles.html">TALLES</a></li>
+                <li><a href="sobrenosotras.html">SOBRE NOSOTROS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+
+
+        <div class="header-container header-mobile"> <!-- CELULAR  -->
+            <!-- Botón del menú hamburguesa -->
+            <img src="img/Logo.png" alt="Logo" class="logo">
+            <button class="menu-toggle" aria-label="Open menu">
+                <span class="menu-icon"><img src="img/menu.png" alt="hamburguesa"></span>
+            </button>
+        </div>
+
+        <!-- Estructura del Modal, justo después del div del header -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="list-container">
+                    <ul>
+                        <li class="alineo">
+                            <img src="img/home.png" alt="imghome">
+                            <a href="index.html">Inicio</a>
+                        </li>
+                        <div class="adorno"></div>
+                        <li>
+                            <img src="img/sobre.nosotros.png" alt="img2">
+                            <a href="sobrenosotras.html">Sobre Nosotros</a>
+                        </li>
+                        <div class="adorno"></div>
+                        <li>
+                            <img src="img/talles.png" alt="img3">
+                            <a href="talles.html">Talles</a>
+                        </li>
+                        <div class="adorno"></div>
+                        <li>
+                            <img src="img/contacto2.png" alt="imgcontacto">
+                            <a href="contacto.html">Contacto</a>
+                        </li>
+                        <div class="adorno"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+<main>
+
+
+   
+
+
+
+           <!-- Contenido principal.. -->
+       
+        <div class="linea izquierda espacio1"> 
+        
+            <h1 style="text-align: left; margin: 2rem 0; color: #333;" class=".mali-bold ">Nuestros modelos</h1>
+        </div>
+  
+  
+       <!-- EMPIEZAN FOTOS DE PIJAMAS (ESTAN EN ORDEN ZIC ZAC, IZQUIERDA DERECHA) -->
+
+       <div class="modelos colorizquierda"> <!-- IZQUIERDA -->
+        <img  src="img/martina.png" alt="foto4">
+        <div class="textoycarrito">
+            <h3 class="mali-semibold">MARTINA</h3>
+         
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>XL</h5>
+            <p class="boton intermonserrat   add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
+
+        </div>
+     </div>
+  
+  
+   
+  
+          <div class="modelos colorderecha"> <!-- DERECHA -->
+           
+        <div class="textoycarrito">
+            <h3 class="mali-semibold">VALERIA</h3>
+           
+           <h5 class="intermonserrat ">TALLES DISPONIBLES<br>
+               <span>S</span>
+           </h5>
+           <p class="boton intermonserrat   add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
+  
+        </div>
+        <img src="img/valeria.png" alt="foto2">
+     </div>
+  
+  
+        <div class="modelos colorizquierda"> <!-- IZQUIERDA -->
+          <img  src="img/emilia.png" alt="foto4">
+          <div class="textoycarrito">
+              <h3 class="mali-semibold">EMILIA</h3>
+           
+              <h5 class="intermonserrat ">TALLES DISPONIBLES<br>XL</h5>
+              <p class="boton intermonserrat   add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
+  
+          </div>
+       </div>
+
+
+       <div class="modelos colorderecha"> <!-- DERECHA -->
+           
+        <div class="textoycarrito">
+            <h3 class="mali-semibold">JUANA PÉTALO</h3>
+           
+           <h5 class="intermonserrat ">TALLES DISPONIBLES<br>
+               <span>S, L, XL</span>
+           </h5>
+           <p class="boton intermonserrat   add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
+  
+        </div>
+        <img src="img/juana.png" alt="foto2">
+     </div>
+
+     
+     <div class="modelos colorizquierda"> <!-- IZQUIERDA -->
+        <img  src="img/lucia.png" alt="foto4">
+        <div class="textoycarrito">
+            <h3 class="mali-semibold">LUCIA</h3>
+         
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>XL, XXL</h5>
+            <p class="boton intermonserrat   add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
+
+        </div>
+     </div>
+
+     <div class="modelos colorderecha"> <!-- DERECHA -->
+           
+        <div class="textoycarrito">
+            <h3 class="mali-semibold">INDIA</h3>
+           
+           <h5 class="intermonserrat ">TALLES DISPONIBLES<br>
+               <span>L, XL, XXL</span>
+           </h5>
+           <p class="boton intermonserrat   add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
+  
+        </div>
+        <img src="img/india.png" alt="foto2">
+     </div>
+
+     <div class="modelos colorizquierda"> <!-- IZQUIERDA -->
+        <img  src="img/justina.png" alt="foto4">
+        <div class="textoycarrito">
+            <h3 class="mali-semibold">JUSTINA</h3>
+         
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>M</h5>
+            <p class="boton intermonserrat   add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
+
+        </div>
+     </div>
+
+     <div class="modelos colorderecha"> <!-- DERECHA -->
+           
+        <div class="textoycarrito">
+            <h3 class="mali-semibold">TERE GRAY</h3>
+           
+           <h5 class="intermonserrat ">TALLES DISPONIBLES<br>
+               <span>S, L</span>
+           </h5>
+           <p class="boton intermonserrat   add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
+  
+        </div>
+        <img src="img/tere.png" alt="foto2">
+     </div>
+
+     <div class="modelos colorizquierda"> <!-- IZQUIERDA -->
+        <img  src="img/rocio.png" alt="foto4">
+        <div class="textoycarrito">
+            <h3 class="mali-semibold">ROCIO</h3>
+         
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>Sin stock</h5>
+            <p class="boton intermonserrat  add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
+
+        </div>
+     </div>
+
+     <div class="modelos colorderecha"> <!-- DERECHA -->
+           
+        <div class="textoycarrito">
+            <h3 class="mali-semibold">JULIA</h3>
+           
+           <h5 class="cambiocolor intermonserrat ">TALLES DISPONIBLES<br>
+               <span>L, XL, XXL</span>
+           </h5>
+           <p class="boton intermonserrat   add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
+  
+        </div>
+        <img src="img/julia.png" alt="foto2">
+     </div>
+
+     <div class="modelos colorizquierda"> <!-- IZQUIERDA -->
+        <img  src="img/francesca.png" alt="foto4">
+        <div class="textoycarrito">
+            <h3 class="mali-semibold">FRANCESCA</h3>
+         
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>M, L, XL</h5>
+            <p class="boton intermonserrat   add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
+
+        </div>
+     </div>
+
+
+     <div class="modelos colorderecha"> <!-- DERECHA -->
+           
+        <div class="textoycarrito">
+            <h3 class="mali-semibold">GOLDEN</h3>
+           
+           <h5 class="intermonserrat ">TALLES DISPONIBLES<br>
+               <span>M, XL, XXL</span>
+           </h5>
+           <p class="boton intermonserrat   add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
+  
+        </div>
+        <img src="img/golden2.png" alt="foto2">
+     </div>
+
+     <div class="modelos colorizquierda"> <!-- IZQUIERDA -->
+        <img  src="img/morena.png" alt="foto4">
+        <div class="textoycarrito">
+            <h3 class="mali-semibold">MORENA</h3>
+         
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>M</h5>
+            <p class="boton intermonserrat   add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
+
+        </div>
+     </div>
+   
+  
+    <!-- FOTOS VERCION CELULAR  -->
+
+
+
+    <div class="modelos2">
+        <img src="img/valeria.png" alt="foto1">
+        <div class="textoycarrito1">
+            <h3 class="mali-semibold">VALERIA</h3>
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>M</h5>
+            <p class="boton1 intermonserrat   " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+        </div>
+    </div>
+
+    <div class="modelos2">
+        <img src="img/emilia.png" alt="foto1">
+        <div class="textoycarrito1">
+            <h3 class="mali-semibold">EMILIA</h3>
+            <h5 class="cambiocolor intermonserrat ">TALLES DISPONIBLES<br>XL</h5>
+            <p class="boton1 intermonserrat  " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+        </div>
+    </div>
+
+    <div class="modelos2">
+        <img src="img/juana.png" alt="foto1">
+        <div class="textoycarrito1">
+            <h3 class="mali-semibold">JUANA PETALO</h3>
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>S, L, XL</h5>
+            <p class="boton1 intermonserrat  " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+        </div>
+    </div>
+
+    <div class="modelos2">
+        <img src="img/lucia.png" alt="foto1">
+        <div class="textoycarrito1">
+            <h3 class="mali-semibold">LUCIA</h3>
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>XL, XXL</h5>
+            <p class="boton1 intermonserrat " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+        </div>
+    </div>
+
+    <div class="modelos2">
+        <img src="img/martina.png" alt="foto1">
+        <div class="textoycarrito1">
+            <h3 class="mali-semibold">MARTINA</h3>
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>XL</h5>
+            <p class="boton1 intermonserrat   " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+        </div>
+    </div>
+
+    <div class="modelos2">
+        <img src="img/india.png" alt="foto1">
+        <div class="textoycarrito1">
+            <h3 class="mali-semibold">INDIA</h3>
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>L, XL, XXL</h5>
+            <p class="boton1 intermonserrat  " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+        </div>
+    </div>
+
+    <div class="modelos2">
+        <img src="img/justina.png" alt="foto1">
+        <div class="textoycarrito1">
+            <h3 class="mali-semibold">JUSTINA</h3>
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>M</h5>
+            <p class="boton1 intermonserrat   " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+        </div>
+    </div>
+
+    <div class="modelos2">
+        <img src="img/tere.png" alt="foto1">
+        <div class="textoycarrito1">
+            <h3 class="mali-semibold">TERE GRAY</h3>
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>S, L</h5>
+            <p class="boton1 intermonserrat   " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+        </div>
+    </div>
+
+    <div class="modelos2">
+        <img src="img/rocio.png" alt="foto1">
+        <div class="textoycarrito1">
+            <h3 class="mali-semibold">ROCIO</h3>
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>Sin stock</h5>
+            <p class="boton1 intermonserrat  " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+        </div>
+    </div>
+
+    <div class="modelos2">
+        <img src="img/julia.png" alt="foto1">
+        <div class="textoycarrito1">
+            <h3 class="mali-semibold">JULIA</h3>
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>L, XL, XXL</h5>
+            <p class="boton1 intermonserrat  " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+        </div>
+    </div>
+
+    <div class="modelos2">
+        <img src="img/francesca.png" alt="foto1">
+        <div class="textoycarrito1">
+            <h3 class="mali-semibold">FRANCESCA</h3>
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>M, L, XL</h5>
+            <p class="boton1 intermonserrat   " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+        </div>
+    </div>
+
+    <div class="modelos2">
+        <img src="img/morena.png" alt="foto1">
+        <div class="textoycarrito1">
+            <h3 class="mali-semibold">MORENA</h3>
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>M</h5>
+            <p class="boton1 intermonserrat   " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+        </div>
+    </div>
+
+    <div class="modelos2">
+        <img src="img/golden2.png" alt="foto1">
+        <div class="textoycarrito1">
+            <h3 class="mali-semibold">GOLDEN</h3>
+            <h5 class="intermonserrat ">TALLES DISPONIBLES<br>M, XL, XXL</h5>
+            <p class="boton1 intermonserrat  " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+        </div>
+    </div>
+
+    
+  
+  
+    
+  
+         
+  
+     
+         
+  
+    <!-- FINAL DE LOS MODELOS.. -->
+  
+  
+    <div class="linea izquierda">
+        <h2 style="text-align: left; margin: 2rem 0; color: #333;" class=".mali-bold ">Precios y Estilos</h2>
+      </div>
+      <div class="featured-products">
+          <div class="product-card">
+              <div class="product-image1"></div>
+              <div class="product-info intermonserrat">
+                  <h3>Pijama de Invierno</h3>
+                  <p>Cuando pruebes las telas sueves, sera un camino de ida.</p>
+                  <p class="price">$55.000</p>
+                  <a href="invierno.html">
+                    <button style="background: #FDCDD6; color: #333; border: none; padding: 0.5rem 1rem; border-radius: 5px;">¡Encuentra tu favorito!</button>
+                  </a>
+              </div>
+          </div>
+          <div class="product-card">
+              <div class="product-image2"></div>
+              <div class="product-info intermonserrat">
+                  <h3>Pijama Intermedios</h3>
+                  <p>Si preferis largo abajo y corto arriba, son para ti.</p>
+                  <p class="price">$52.000</p>
+                  <a href="intermedio.html">
+                      <button style="background: #FDCDD6; color: #333; border: none; padding: 0.5rem 1rem; border-radius: 5px;">¡Encuentra tu favorito!</button>
+                    </a>
+              </div>
+          </div>
+          <div class="product-card">
+              <div class="product-image3"></div>
+              <div class="product-info intermonserrat">
+                  <h3>Pijama de Verano</h3>
+                  <p>Disfrutar modelos comodos, frescos y muy bellos.</p>
+                  <p class="price">$45.000</p>
+                  <a href="verano.html">
+                      <button style="background: #FDCDD6; color: #333; border: none; padding: 0.5rem 1rem; border-radius: 5px;">¡Encuentra tu favorito!</button>
+                    </a>
+              </div>
+          </div>
+          <div class="product-card">
+              <div class="product-image4"></div>
+              <div class="product-info intermonserrat">
+                  <h3>Camisolines</h3>
+                  <p>Para los amantes de la soltura y Suavidad.</p>
+                  <p class="price">$42.000</p>
+                  <a href="modeloscCamisolin.html">
+                   <button style="background: #FDCDD6; color: #333; border: none; padding: 0.5rem 1rem; border-radius: 5px;">¡Encuentra tu favorito!</button>
+                  </a> 
+              </div>
+          </div>
+      </div>
+  
+  
+  
+         
+   
+</main>
+<script src="menu.js"></script>
+<script src="script.js"></script>
+<script src="boton.js"></script>
+<footer>
+
+   <div class="copyright">
+        <p>&copy; 2025 PijamasInfinite. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

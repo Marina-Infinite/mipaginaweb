@@ -1,0 +1,524 @@
+/* tipografia titulos */
+@import url('https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.mali-extralight {
+  font-family: "Mali", cursive;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.mali-light {
+  font-family: "Mali", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.mali-regular {
+  font-family: "Mali", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mali-medium {
+  font-family: "Mali", cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.mali-semibold {
+  font-family: "Mali", cursive;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.mali-bold {
+  font-family: "Mali", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.mali-extralight-italic {
+  font-family: "Mali", cursive;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.mali-light-italic {
+  font-family: "Mali", cursive;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.mali-regular-italic {
+  font-family: "Mali", cursive;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.mali-medium-italic {
+  font-family: "Mali", cursive;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.mali-semibold-italic {
+  font-family: "Mali", cursive;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.mali-bold-italic {
+  font-family: "Mali", cursive;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+/* tipografia texto */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.intermonserrat {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+
+/* PORTADA--------------------------------------------------------------------------------------------------------------------- */
+
+.word1 {
+  opacity: 0;
+  animation: fadeInOut 10s infinite;
+  animation-fill-mode: forwards;
+}
+
+.word1:nth-child(1) { animation-delay: 0.5s; }
+.word1:nth-child(2) { animation-delay: 1.5s; }
+.word1:nth-child(3) { animation-delay: 2.5s; }
+.word1:nth-child(4) { animation-delay: 3.5s; }
+.word1:nth-child(5) { animation-delay: 4.5s; }
+.word1:nth-child(6) { animation-delay: 5.5s; }
+.word1:nth-child(7) { animation-delay: 6.5s; }
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }  /* Empieza y termina invisible */
+  10% { opacity: 1; } /* Primera palabra aparece */
+  20% { opacity: 1; } /* Segunda palabra aparece */
+  30% { opacity: 1; } 
+  40% { opacity: 1; }
+  50% { opacity: 1; }
+  60% { opacity: 1; }
+  70% { opacity: 1; } /* Todas las palabras visibles */
+  85% { opacity: 0; } /* Se desvanecen juntas */
+}
+
+
+/* MODELOS --------------------------------------------------------------------------------------------------------------------- */
+
+
+.modelos  {
+  display: flex;
+  align-items: center;
+  
+  justify-content: space-between; 
+  
+  margin-bottom: 5%;
+  
+  color: #333;
+}
+
+
+
+
+
+
+.colorizquierda {
+  background: linear-gradient(to left, 
+    #FDE1E7 0%,  /* El color rosa claro comienza en el 0% */
+    #FDE1E7 100%); /* El color rosa claro ocupa todo el espacio */
+}
+
+
+.colorderecha {
+  background: linear-gradient(to right, 
+  #FDE1E7 0%,  /* El color rosa claro comienza en el 0% */
+  #FDE1E7 100%); /* El color rosa claro ocupa todo el espacio */
+}
+
+
+
+
+
+
+
+
+.textoycarrito {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  text-align: center;
+  
+}
+
+
+/* BOTON */
+.boton {
+  background-color: #F8A2B3;
+  color: #333333;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  font-size:1rem;
+  transition: background-color 0.3s ease;
+ 
+  margin: 0 auto; /* Centrar el botón horizontalmente */
+  margin-top: 0.2rem; /* Empujar el botón hacia abajo */
+
+}
+
+.boton:hover {
+  background-color: #FBC1CC;
+}
+
+
+
+.linea {
+  display: flex;
+  align-items: center;
+  height: 2em;
+}
+
+.linea.izquierda {
+  border-left: 4px solid #F8A2B3;
+  padding-left: 10px;
+  justify-content: flex-start;
+}
+
+.linea.derecha {
+  border-right: 4px solid #F8A2B3;
+  padding-right: 10px;
+  justify-content: flex-end;
+}
+
+.textotam{
+  font-size: 138%;
+}
+
+.espacio{
+  margin-bottom: 1.5rem;
+}
+
+.espacio1{
+  margin-bottom: 2rem;               
+}
+
+.espacio2{
+  margin-bottom: 4rem;
+}
+
+.espacio4{
+  margin-bottom: 5rem;
+}
+
+.espacio3{
+  margin-top: 4rem;
+}
+
+
+
+
+/* sobre Nosotras--------------------------------------------------------------------------------------------------------------------- 
+
+
+
+
+
+.fondo1 {
+  background-color:#FDE1E7; 
+  border: 2px solid #F8A2B3;
+  width: 1200px;
+  height: 100px; 
+  border-radius: 10px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+  margin: 20px auto; 
+}
+
+.textotam1{
+  font-size:x-large;
+}
+*/
+
+/* contacto--------------------------------------------------------------------------------------------------------------------- */
+
+
+/* CONTACTO */
+
+.redes {
+  border: 2px solid #F8A2B3;
+  place-items: center;
+  display: grid;
+  text-align: center;
+  align-items: center;
+  background-color: #FDE1E7;
+  color: #333;
+  width: 250px; /* Ajusta el ancho según sea necesario */
+  height: 200px; /* Ajusta la altura según sea necesario */
+  margin: auto;
+  justify-content: center;
+  margin-bottom: 3%;
+  margin-top: 3%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  padding: 15px; /* Más espacio interno */
+  border-radius: 10px; /* Bordes más suaves */
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  
+  gap: 15px;
+}
+
+.flex img {
+  width: 30px; /* Tamaño uniforme para todas las imágenes */
+  height: 30px;
+  object-fit: contain; /* Asegura que la imagen no se deforme */
+}
+
+
+.acomodar {
+  color: #333; /* Hereda el color del elemento padre */
+  text-decoration: none; /* Elimina la línea subrayada */
+  width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 8px; /* Da más área de clic */
+    border-radius: 8px; /* Bordes suaves al hacer hover */
+    transition: background-color 0.3s ease; /* Animación sutil */
+}
+
+.acomodar:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Efecto hover ligero */
+}
+.textomovil{
+  display: none;
+}
+
+.textopc{
+  display: block;
+}
+
+
+/* Mostrar solo en móviles */
+@media (max-width: 768px) {
+
+  @media (max-width: 768px) {
+
+    .textopc {
+      display: none; /* Oculta la versión de PC */
+    }
+  
+    .textomovil {
+      display: block; /* Muestra la versión móvil */
+      margin-left: 0.3rem; /* Agrega margen a los lados */
+      margin-right: 0.3rem;
+      font-size: 1.2rem; /* Ajusta el tamaño del texto (1rem = 16px por defecto) */
+      text-align: justify; /* Asegura un texto bien alineado */
+      line-height: 1.5; /* Mejora la legibilidad */
+      margin-bottom: 9%;
+    }
+  
+  }
+  
+
+}
+
+
+
+
+
+/* FOOTER--------------------------------------------------------------------------------------------------------------------- */
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.line {
+  flex: 1;
+  border: none;
+  border-top: 1px solid #333;
+}
+
+.left {
+  margin-right: 20px;
+}
+
+.right {
+  margin-left: 20px;
+}
+
+.footer-logo {
+  height: 50px;
+}
+
+
+/* carrusel--------------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos para el carrusel en móviles */
+@media (max-width: 768px) {
+  .featured-products {
+    display: block;
+    overflow: hidden;
+  }
+
+  .product-card {
+      margin: 0 10px;
+  }
+
+  .slick-slide {
+      margin: 0 10px;
+  }
+
+  .product-image1, .product-image2, .product-image3, .product-image4 {
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+  }
+} /* <- AQUÍ SE CIERRA EL MEDIA QUERY */
+
+
+
+
+
+
+/* TALLES--------------------------------------------------------------------------------------------------------------------- */
+
+/* Ocultar la sección en escritorio */
+.talles-container {
+  display: none;
+}
+
+.cuadrotalles{
+  display: block;
+}
+
+.cuadro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evita que la sombra sobresalga */
+  
+  border-radius: 8px; /* Bordes redondeados */
+ 
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.cuadro:hover {
+  transform: scale(1.15);
+  
+}
+
+.cuadro img {
+  max-width: 70%; /* Mantiene el tamaño de la imagen */
+  height: auto;
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+
+
+/* Mostrar solo en móviles */
+@media (max-width: 768px) {
+
+  .cuadrotalles{
+    display: none;
+  }
+  .talles-container {
+      display: grid !important;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 3rem 1rem;
+      font-size: 1rem;
+  }
+
+  .talle-box {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      color: #333;
+      cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .talle-box h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+  }
+
+  .talle-box p {
+      display: block;
+  }
+
+  
+  
+  
+  .talle-box img {
+    width: 100px; /* Tamaño inicial de la imagen */
+    transition: all 0.3s ease;
+    align-items: center;
+  }
+  
+  .talle-box.expanded {
+    background-color: #f0f0f0; /* Cambia el fondo al expandir */
+  }
+  
+  .talle-box.expanded img {
+    width: 250px; /* Tamaño ampliado */
+  }
+
+
+ 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
