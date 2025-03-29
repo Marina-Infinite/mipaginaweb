@@ -115,6 +115,26 @@
   85% { opacity: 0; } /* Se desvanecen juntas */
 }
 
+button {
+  background: #FDCDD6;
+  color: #333;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50px;
+  width: 100%;
+  cursor: pointer; /* Indica que es interactivo */
+  transition: background 0.3s ease; /* Suaviza el cambio de color */
+}
+
+button:hover {
+  background: #FEE3E8; /* Color más claro para hover */
+}
+
+button:active {
+  background: #FECED3; /* Simula presión al hacer clic o tocar */
+}
+
+
 
 /* MODELOS --------------------------------------------------------------------------------------------------------------------- */
 
@@ -166,7 +186,10 @@
 }
 
 
-/* BOTON */
+
+
+
+/* BOTON  DE MODELOS */
 .boton {
   background-color: #F8A2B3;
   color: #333333;
@@ -348,32 +371,197 @@
 
 
 
+
+
+
+
 /* FOOTER--------------------------------------------------------------------------------------------------------------------- */
+/* Estilos del footer */
+ /* Footer Styles */
+footer {
+  background-color: var(--dark-color);
+  color: #333;
+  padding: 2rem 1rem;
+
+}
 
 .footer-content {
-  display: flex;
-  align-items: center;
-  width: 80%;
   max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ 
+}
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 5rem; /* Controla el espacio entre el logo, la línea y otros elementos */
+  padding: 0.5rem 1rem;
+  background-color: var(--dark-color);
+  color: #333;
 }
 
-.line {
-  flex: 1;
-  border: none;
-  border-top: 1px solid #333;
+/* Logo a la izquierda */
+.footer-logo img {
+  max-height: 50px; /* Ajusta el tamaño del logo */
 }
 
-.left {
-  margin-right: 20px;
+/* Línea vertical */
+.footer-divider {
+  width: 1px;
+  background-color: #333; /* Combínalo con tu diseño */
+  height: 50px;
 }
 
-.right {
-  margin-left: 20px;
+/* Redes sociales a la derecha */
+.footer-social {
+  display: flex;
+  justify-content: flex-end; /* Alinea todo al extremo derecho horizontalmente */
+  flex-direction: row; /* Mantiene los íconos en línea */
+  text-align: center;
+  gap: 0.5rem; /* Espaciado entre el título y los íconos */
+}
+
+
+
+
+
+/* Redes sociales a la derecha */
+.footer-social a {
+  margin: 0 0.5rem;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.5rem;
+  
+  
+}
+
+.footer-social a:hover {
+  color: #FFF; /* Cambia de color en hover */
+}
+
+.footer-social img{
+  max-height: 25px;
 }
 
 .footer-logo {
-  height: 50px;
+  margin-right: 1rem; /* Separación entre el logo y la línea */
+ 
 }
+
+.footer-divider {
+  width: 1px;
+  height: 50px;
+  background-color: #333;
+  margin: 0 0.1rem; /* Espacio estándar a ambos lados */
+}
+
+.copyright {
+  margin-top: 1rem;
+  text-align: center;
+  border-top: 1px solid #333; /* Línea separadora */
+  padding-top: 1rem; /* Espaciado después de la línea */
+  color: #4141419e;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column; /* Alinea correo y ubicación en columna */
+  justify-content: center;
+  gap: 0.6rem; /* Espaciado entre las líneas */
+  
+  
+}
+
+.mobile{
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+.mobile{
+  display: block;
+}
+
+.PC{
+  display: none;
+}
+
+
+/* General Styles for Mobile Footer */
+footer {
+  background-color: var(--dark-color);
+  color: #333;
+  padding: 1.5rem 1rem; /* Reducimos el padding para optimizar espacio */
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column; /* Alinea elementos en columna */
+  align-items: center; /* Centra todos los elementos horizontalmente */
+  gap: 1.5rem; /* Espaciado entre las secciones */
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center; /* Asegura que el logo esté centrado */
+  margin: 0 auto; /* Elimina cualquier margen que lo desplace */
+}
+
+.footer-logo img {
+  max-height: 40px; /* Ajusta el tamaño del logo para dispositivos móviles */
+  margin-bottom: 1rem; /* Agrega espacio debajo del logo */
+}
+
+.footer-divider {
+  width: 80%; /* Línea más corta, proporcional al diseño centrado */
+  height: 1px; /* Línea delgada */
+  background-color: #333;
+  margin: 0 auto; /* Centra la línea horizontal */
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column; /* Mantén las etiquetas del mail y ubicación en columna */
+  gap: 0.5rem; /* Espaciado entre las líneas */
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center; /* Centra los íconos sociales */
+  gap: 0.5rem; /* Espaciado entre íconos */
+}
+
+.footer-social img {
+  max-height: 20px; /* Reduce el tamaño de los íconos */
+ 
+}
+
+.copyright {
+  margin-top: 1rem;
+  border-top: 1px solid #333; /* Línea separadora */
+  padding-top: 1rem;
+  font-size: 0.8rem; /* Texto más pequeño para dispositivos móviles */
+  color: #4141419e;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column; /* Alinea correo y ubicación en columna */
+  justify-content: center;
+  gap: 0.5rem; /* Espaciado entre las líneas */
+  margin-right: 10%;
+  
+}
+
+}
+
+
+
+
 
 
 /* carrusel--------------------------------------------------------------------------------------------------------------------- */
@@ -462,7 +650,7 @@
       text-align: left;
       color: #333;
       cursor: pointer;
-    transition: all 0.3s ease;
+      transition: all 0.3s ease;
   }
 
   .talle-box h3 {
@@ -489,7 +677,7 @@
   }
   
   .talle-box.expanded img {
-    width: 250px; /* Tamaño ampliado */
+    width: 230px; /* Tamaño ampliado */
   }
 
 
