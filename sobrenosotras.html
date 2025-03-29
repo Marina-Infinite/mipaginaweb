@@ -204,7 +204,7 @@ footer {
     width: 100%;
     justify-content: center; /* Centra los elementos horizontalmente */
     align-items: center; /* Centra los elementos verticalmente */
-    gap: 20px; /* Espaciado entre logo y menú */
+    gap: 5rem; /* Espaciado entre logo y menú */
 }
 
 .menu-toggle {
@@ -412,7 +412,7 @@ footer {
     <div class="linea izquierda espacio"> 
         <h1 style="text-align: left; margin: 2rem 0; color: #333;" class=".mali-bold ">¿Quienes Somos?</h1>
     </div>
-    <div class="textotam espacio2 intermonserrat">
+    <div class="textotam espacio2 poppins-regular">
         <p  style="color: #333;">
             Soy una mujer emprendedora que, al cerrar una etapa como docente de toda la vida,
              anhelaba plasmar en algún proyecto personal mi esencia como mujer. Siempre he creído 
@@ -430,7 +430,7 @@ footer {
         
         
     </div>
-    <div class="textotam espacio4 intermonserrat">
+    <div class="textotam espacio4 poppins-regular">
         <p style="color: #333;">
             El nacimiento de este proyecto surgió de la necesidad de contagiar a todas las mujeres del 
             disfrute de sentirse lindas, cómodas y calentitas en casa. Hoy en día, las mujeres nos enfrentamos
@@ -452,9 +452,74 @@ footer {
 <script src="menu.js"></script>
 <script src="script.js"></script>
 
-<footer>
+<footer class="PC">
+    <div class="footer-container">
+        <!-- Logo a la izquierda -->
+        <div class="footer-logo">
+            <img src="img/Logo.png" alt="Logo PijamasInfinite">
+        </div>
 
-   <div class="copyright">
+        <!-- Línea vertical -->
+        <div class="footer-divider"></div>
+
+        <!-- Información: correo y ubicación (al lado derecho de la línea) -->
+        <div class="footer-info">
+            <div class="tamicono poppins-regular">
+                <img src="img/email.png" alt="">
+                <p><a href="mailto:marinainfinitepijamas@gmail.com"
+                        style="color: #333;">marinainfinitepijamas@gmail.com</a></p>
+            </div>
+
+            <div class="tamicono poppins-regular">
+                <img src="img/ubicacion.png" alt="">
+                <p>Visitanos en Chascomús, provincia Bs. As.</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="copyright mali-extralight">
+        <p>&copy; 2025 PijamasInfinite. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+<footer class="mobile">
+    <div class="footer-container ">
+        <!-- Logo a la izquierda -->
+        <div class="footer-logo">
+            <img src="img/Logo.png" alt="Logo PijamasInfinite">
+        </div>
+
+        <!-- Línea vertical -->
+        <div class="footer-divider"></div>
+
+
+
+
+        <!-- Información: correo y ubicación (al lado derecho de la línea) -->
+        <div class="footer-info">
+            <div class="tamicono poppins-regular">
+                <img src="img/email.png" alt="">
+                <p><a href="mailto:marinainfinitepijamas@gmail.com"
+                        style="color: #333;">marinainfinitepijamas@gmail.com</a></p>
+            </div>
+
+            <div class="tamicono poppins-regular ">
+                <img src="img/ubicacion.png" alt="">
+                <p>Visítanos en Chascomús, PBA.</p>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+    <div class="copyright mali-extralight">
         <p>&copy; 2025 PijamasInfinite. Todos los derechos reservados.</p>
     </div>
 </footer>
