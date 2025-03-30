@@ -16,17 +16,13 @@ $(document).ready(function() {
 });
 
 
-function expandImage(box) {
-    const isExpanded = box.classList.contains("expanded");
-    
-    // Cierra cualquier otra imagen ampliada
-    document.querySelectorAll(".talle-box").forEach((el) => {
-      el.classList.remove("expanded");
-    });
-  
-    // Expande solo si no está ya expandido
-    if (!isExpanded) {
-      box.classList.add("expanded");
-    }
-}
+
+
+
+
+
+
+
+
+
 
