@@ -76,15 +76,459 @@
 
 /* tipografia texto */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-.intermonserrat {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+
+
+/* --------------------------------------------------------------------------------------------------- */
+
+/* Variables CSS para fácil personalización */
+:root {
+  --primary-color: #F8A2B3;
+  --secondary-color: #2c3e50;
+  --accent-color: rgb(255, 255, 255);
+  --light-color: #f8f9fa;
+  --dark-color: #F8A2B3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+/* Header Styles */
+header {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family:Arial, Helvetica, sans-serif;
+  
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a {
+  color: #0d1f27;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color:#fddde3;
+}
+
+.modal {
+  display: none;
+}
+
+.header-mobile {
+  display: none;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Asegura que los elementos estén centrados verticalmente */
+  }
+
+  /* Oculta la versión de escritorio */
+  .headerpc {
+    display: none;
+  }
+
+  .header-mobile {
+    display: flex;
+    width: 100%;
+
+    justify-content: space-between;
+   
+    align-items: center;
+    
+    gap: 40%;
+   
+  }
+
+
+
+  .logo {
+    height: 50px;
+  }
+
+  .menu-icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    /* Alinea el menú hamburguesa a la derecha */
+  }
+
+  /* Estilo del Modal */
+  .modal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    /* Asegúrate de que esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo semitransparente */
+  }
+
+  .modal-content {
+    display: block;
+    background-color: #F8A2B3;
+    border: 2px solid #FDE1E7;
+
+    margin: 0% auto;
+    padding: 20px;
+    margin-left: 29.9%;
+    width: 70%;
+    position: relative;
+    /* Asegura que los elementos internos se posicionen respecto a este contenedor */
+  }
+
+  .modal-content a {
+
+    /* Cambia el color del texto */
+    text-decoration: none;
+    /* Elimina el subrayado */
+  }
+
+  .modal-content a:hover {
+    color: #fddfe5;
+    /* Cambia el color al pasar el cursor */
+    text-decoration: underline;
+    /* Opcional: subrayado al pasar el cursor */
+  }
+
+
+  .modal-content ul {
+    list-style-type: none;
+    /* Elimina los puntos */
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    /* Opcional: centra los elementos de la lista */
+  }
+
+
+  .modal-content li {
+    display: flex;
+    /* Alinea íconos y texto horizontalmente */
+    align-items: center;
+    /* Centra verticalmente la imagen con el texto */
+    margin-bottom: 20px;
+    /* Espaciado entre los elementos de la lista */
+  }
+
+  .modal-content img {
+    width: 24px;
+    /* Ajusta el tamaño del ícono */
+    height: 24px;
+    /* Ajusta el tamaño del ícono */
+    margin-right: 10px;
+    /* Espacio entre ícono y texto */
+    vertical-align: middle;
+    /* Centra mejor dentro de su línea base */
+  }
+
+  .modal-content a {
+    display: inline-block;
+    /* Asegura un buen comportamiento en flexbox */
+    line-height: 1.2;
+    /* Ajusta el espaciado entre las líneas del texto */
+    font-size: 18px;
+    /* Tamaño uniforme del texto */
+    /* color: #2E4D5A; */
+    color: #0d1f27;
+
+    /* Estilo del texto */
+    text-decoration: none;
+    /* Sin subrayado */
+  }
+
+
+
+
+  .adorno {
+    border: none;
+    margin: 10px 0;
+    /* Espaciado entre elementos */
+    height: 1px;
+    /* Altura de la línea */
+    /* background-color: #fd5e7e;  */
+    background-color: #333;
+
+    width: 100%;
+    /* Abarca todo el ancho */
+  }
+
+
+
+  .close {
+    color: #333;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    /* Ahora puedes mover la 'X' con precisión */
+    top: 10px;
+    /* Ajusta la posición vertical */
+    right: 10px;
+    /* Ajusta la posición horizontal */
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .list-container {
+    margin-top: 50px;
+    /* Da espacio entre la 'X' y la lista */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Oculta el menú de navegación en móviles */
+  .nav-links {
+    display: none;
+  }
+
+
+  .cover {
+    /* Ajusta la posición de la imagen en móviles */
+    background-position: 65%;
+    background-size: cover;
+    padding: 4%;
+
+  }
+
+
+
+
+
+  .cover-content h1 {
+    font-size: 2.7rem;
+    margin-top: 15rem;
+
+  }
+
+
+
+
+}
+
+@media (max-width: 390px) {
+
+
+  .header-mobile {
+    display: flex;
+    width: 100%;
+
+    justify-content: space-between;
+   
+    align-items: center;
+    
+    gap: 35%;
+   
+  }
+
+}
+
+@media (max-width: 380px) {
+
+
+  .header-mobile {
+    display: flex;
+    width: 100%;
+
+    justify-content: space-between;
+   
+    align-items: center;
+    
+    gap: 30%;
+   
+  }
+
+}
 
 
 /* PORTADA--------------------------------------------------------------------------------------------------------------------- */
@@ -95,24 +539,78 @@
   animation-fill-mode: forwards;
 }
 
-.word1:nth-child(1) { animation-delay: 0.5s; }
-.word1:nth-child(2) { animation-delay: 1.5s; }
-.word1:nth-child(3) { animation-delay: 2.5s; }
-.word1:nth-child(4) { animation-delay: 3.5s; }
-.word1:nth-child(5) { animation-delay: 4.5s; }
-.word1:nth-child(6) { animation-delay: 5.5s; }
-.word1:nth-child(7) { animation-delay: 6.5s; }
+.word1:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.word1:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.word1:nth-child(3) {
+  animation-delay: 2.5s;
+}
+
+.word1:nth-child(4) {
+  animation-delay: 3.5s;
+}
+
+.word1:nth-child(5) {
+  animation-delay: 4.5s;
+}
+
+.word1:nth-child(6) {
+  animation-delay: 5.5s;
+}
+
+.word1:nth-child(7) {
+  animation-delay: 6.5s;
+}
 
 @keyframes fadeInOut {
-  0%, 100% { opacity: 0; }  /* Empieza y termina invisible */
-  10% { opacity: 1; } /* Primera palabra aparece */
-  20% { opacity: 1; } /* Segunda palabra aparece */
-  30% { opacity: 1; } 
-  40% { opacity: 1; }
-  50% { opacity: 1; }
-  60% { opacity: 1; }
-  70% { opacity: 1; } /* Todas las palabras visibles */
-  85% { opacity: 0; } /* Se desvanecen juntas */
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  /* Empieza y termina invisible */
+  10% {
+    opacity: 1;
+  }
+
+  /* Primera palabra aparece */
+  20% {
+    opacity: 1;
+  }
+
+  /* Segunda palabra aparece */
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  /* Todas las palabras visibles */
+  85% {
+    opacity: 0;
+  }
+
+  /* Se desvanecen juntas */
 }
 
 button {
@@ -122,16 +620,20 @@ button {
   padding: 0.5rem;
   border-radius: 50px;
   width: 100%;
-  cursor: pointer; /* Indica que es interactivo */
-  transition: background 0.3s ease; /* Suaviza el cambio de color */
+  cursor: pointer;
+  /* Indica que es interactivo */
+  transition: background 0.3s ease;
+  /* Suaviza el cambio de color */
 }
 
 button:hover {
-  background: #FEE3E8; /* Color más claro para hover */
+  background: #FEE3E8;
+  /* Color más claro para hover */
 }
 
 button:active {
-  background: #FECED3; /* Simula presión al hacer clic o tocar */
+  background: #FECED3;
+  /* Simula presión al hacer clic o tocar */
 }
 
 
@@ -139,14 +641,14 @@ button:active {
 /* MODELOS --------------------------------------------------------------------------------------------------------------------- */
 
 
-.modelos  {
+.modelos {
   display: flex;
   align-items: center;
-  
-  justify-content: space-between; 
-  
+
+  justify-content: space-between;
+
   margin-bottom: 5%;
-  
+
   color: #333;
 }
 
@@ -156,16 +658,20 @@ button:active {
 
 
 .colorizquierda {
-  background: linear-gradient(to left, 
-    #FDE1E7 0%,  /* El color rosa claro comienza en el 0% */
-    #FDE1E7 100%); /* El color rosa claro ocupa todo el espacio */
+  background: linear-gradient(to left,
+      #FDE1E7 0%,
+      /* El color rosa claro comienza en el 0% */
+      #FDE1E7 100%);
+  /* El color rosa claro ocupa todo el espacio */
 }
 
 
 .colorderecha {
-  background: linear-gradient(to right, 
-  #FDE1E7 0%,  /* El color rosa claro comienza en el 0% */
-  #FDE1E7 100%); /* El color rosa claro ocupa todo el espacio */
+  background: linear-gradient(to right,
+      #FDE1E7 0%,
+      /* El color rosa claro comienza en el 0% */
+      #FDE1E7 100%);
+  /* El color rosa claro ocupa todo el espacio */
 }
 
 
@@ -179,10 +685,12 @@ button:active {
   flex: 2;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra los elementos horizontalmente */
-  justify-content: center; /* Centra los elementos verticalmente */
+  align-items: center;
+  /* Centra los elementos horizontalmente */
+  justify-content: center;
+  /* Centra los elementos verticalmente */
   text-align: center;
-  
+
 }
 
 
@@ -198,11 +706,13 @@ button:active {
   padding: 10px 20px;
   cursor: pointer;
   text-align: center;
-  font-size:1rem;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
- 
-  margin: 0 auto; /* Centrar el botón horizontalmente */
-  margin-top: 0.2rem; /* Empujar el botón hacia abajo */
+
+  margin: 0 auto;
+  /* Centrar el botón horizontalmente */
+  margin-top: 0.2rem;
+  /* Empujar el botón hacia abajo */
 
 }
 
@@ -230,27 +740,27 @@ button:active {
   justify-content: flex-end;
 }
 
-.textotam{
+.textotam {
   font-size: 138%;
 }
 
-.espacio{
+.espacio {
   margin-bottom: 1.5rem;
 }
 
-.espacio1{
-  margin-bottom: 2rem;               
+.espacio1 {
+  margin-bottom: 2rem;
 }
 
-.espacio2{
+.espacio2 {
   margin-bottom: 4rem;
 }
 
-.espacio4{
+.espacio4 {
   margin-bottom: 5rem;
 }
 
-.espacio3{
+.espacio3 {
   margin-top: 4rem;
 }
 
@@ -263,24 +773,6 @@ button:active {
 
 
 
-.fondo1 {
-  background-color:#FDE1E7; 
-  border: 2px solid #F8A2B3;
-  width: 1200px;
-  height: 100px; 
-  border-radius: 10px; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 50px;
-  margin: 20px auto; 
-}
-
-.textotam1{
-  font-size:x-large;
-}
-*/
 
 /* contacto--------------------------------------------------------------------------------------------------------------------- */
 
@@ -295,77 +787,96 @@ button:active {
   align-items: center;
   background-color: #FDE1E7;
   color: #333;
-  width: 250px; /* Ajusta el ancho según sea necesario */
-  height: 200px; /* Ajusta la altura según sea necesario */
+  width: 250px;
+  /* Ajusta el ancho según sea necesario */
+  height: 200px;
+  /* Ajusta la altura según sea necesario */
   margin: auto;
   justify-content: center;
   margin-bottom: 3%;
   margin-top: 3%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  padding: 15px; /* Más espacio interno */
-  border-radius: 10px; /* Bordes más suaves */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra sutil */
+  padding: 15px;
+  /* Más espacio interno */
+  border-radius: 10px;
+  /* Bordes más suaves */
 }
 
 .flex {
   display: flex;
   align-items: center;
-  
+
   gap: 15px;
 }
 
 .flex img {
-  width: 30px; /* Tamaño uniforme para todas las imágenes */
+  width: 30px;
+  /* Tamaño uniforme para todas las imágenes */
   height: 30px;
-  object-fit: contain; /* Asegura que la imagen no se deforme */
+  object-fit: contain;
+  /* Asegura que la imagen no se deforme */
 }
 
 
 .acomodar {
-  color: #333; /* Hereda el color del elemento padre */
-  text-decoration: none; /* Elimina la línea subrayada */
+  color: #333;
+  /* Hereda el color del elemento padre */
+  text-decoration: none;
+  /* Elimina la línea subrayada */
   width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 8px; /* Da más área de clic */
-    border-radius: 8px; /* Bordes suaves al hacer hover */
-    transition: background-color 0.3s ease; /* Animación sutil */
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  /* Da más área de clic */
+  border-radius: 8px;
+  /* Bordes suaves al hacer hover */
+  transition: background-color 0.3s ease;
+  /* Animación sutil */
 }
 
 .acomodar:hover {
-  background-color: rgba(0, 0, 0, 0.05); /* Efecto hover ligero */
+  background-color: rgba(0, 0, 0, 0.05);
+  /* Efecto hover ligero */
 }
-.textomovil{
+
+.textomovil {
   display: none;
 }
 
-.textopc{
+.textopc {
   display: block;
 }
 
 
 /* Mostrar solo en móviles */
+
+
 @media (max-width: 768px) {
 
-  @media (max-width: 768px) {
-
-    .textopc {
-      display: none; /* Oculta la versión de PC */
-    }
-  
-    .textomovil {
-      display: block; /* Muestra la versión móvil */
-      margin-left: 0.3rem; /* Agrega margen a los lados */
-      margin-right: 0.3rem;
-      font-size: 1.2rem; /* Ajusta el tamaño del texto (1rem = 16px por defecto) */
-      text-align: justify; /* Asegura un texto bien alineado */
-      line-height: 1.5; /* Mejora la legibilidad */
-      margin-bottom: 9%;
-    }
-  
+  .textopc {
+    display: none;
+    /* Oculta la versión de PC */
   }
-  
+
+  .textomovil {
+    display: block;
+    /* Muestra la versión móvil */
+    margin-left: 0.3rem;
+    /* Agrega margen a los lados */
+    margin-right: 0.3rem;
+    font-size: 1.2rem;
+    /* Ajusta el tamaño del texto (1rem = 16px por defecto) */
+    text-align: justify;
+    /* Asegura un texto bien alineado */
+    line-height: 1.5;
+    /* Mejora la legibilidad */
+    margin-bottom: 9%;
+  }
 
 }
+
+
 
 
 
@@ -377,7 +888,7 @@ button:active {
 
 /* FOOTER--------------------------------------------------------------------------------------------------------------------- */
 /* Estilos del footer */
- /* Footer Styles */
+/* Footer Styles */
 footer {
   background-color: var(--dark-color);
   color: #333;
@@ -390,14 +901,16 @@ footer {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
- 
+
 }
+
 .footer-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
-  gap: 5rem; /* Controla el espacio entre el logo, la línea y otros elementos */
+  gap: 5rem;
+  /* Controla el espacio entre el logo, la línea y otros elementos */
   padding: 0.5rem 1rem;
   background-color: var(--dark-color);
   color: #333;
@@ -405,157 +918,173 @@ footer {
 
 /* Logo a la izquierda */
 .footer-logo img {
-  max-height: 50px; /* Ajusta el tamaño del logo */
+  max-height: 50px;
+  /* Ajusta el tamaño del logo */
 }
 
 /* Línea vertical */
 .footer-divider {
   width: 1px;
-  background-color: #333; /* Combínalo con tu diseño */
+  background-color: #333;
+  /* Combínalo con tu diseño */
   height: 50px;
 }
 
-/* Redes sociales a la derecha */
-.footer-social {
-  display: flex;
-  justify-content: flex-end; /* Alinea todo al extremo derecho horizontalmente */
-  flex-direction: row; /* Mantiene los íconos en línea */
-  text-align: center;
-  gap: 0.5rem; /* Espaciado entre el título y los íconos */
-}
 
 
 
 
 
-/* Redes sociales a la derecha */
-.footer-social a {
-  margin: 0 0.5rem;
-  color: #333;
-  text-decoration: none;
-  font-size: 1.5rem;
-  
-  
-}
 
-.footer-social a:hover {
-  color: #FFF; /* Cambia de color en hover */
-}
 
-.footer-social img{
-  max-height: 25px;
-}
 
 .footer-logo {
-  margin-right: 1rem; /* Separación entre el logo y la línea */
- 
+  margin-right: 1rem;
+  /* Separación entre el logo y la línea */
+
 }
 
 .footer-divider {
   width: 1px;
   height: 50px;
   background-color: #333;
-  margin: 0 0.1rem; /* Espacio estándar a ambos lados */
+  margin: 0 0.1rem;
+  /* Espacio estándar a ambos lados */
 }
 
 .copyright {
   margin-top: 1rem;
   text-align: center;
-  border-top: 1px solid #333; /* Línea separadora */
-  padding-top: 1rem; /* Espaciado después de la línea */
+  border-top: 1px solid #333;
+  /* Línea separadora */
+  padding-top: 1rem;
+  /* Espaciado después de la línea */
   color: #4141419e;
 }
 
 .footer-info {
   display: flex;
-  flex-direction: column; /* Alinea correo y ubicación en columna */
+  flex-direction: column;
+  /* Alinea correo y ubicación en columna */
   justify-content: center;
-  gap: 0.6rem; /* Espaciado entre las líneas */
-  
-  
+  gap: 0.6rem;
+  /* Espaciado entre las líneas */
+
+
 }
 
-.mobile{
+.footer-info img {
+  max-height: 20px;
+  /* Reduce el tamaño de los íconos */
+
+}
+
+.tamicono {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  /* Ajusta el valor según la distancia que prefieras */
+}
+
+.mobile {
   display: none;
 }
 
 @media (max-width: 768px) {
 
-.mobile{
-  display: block;
-}
+  .mobile {
+    display: block;
+  }
 
-.PC{
-  display: none;
-}
+  .PC {
+    display: none;
+  }
 
 
-/* General Styles for Mobile Footer */
-footer {
-  background-color: var(--dark-color);
-  color: #333;
-  padding: 1.5rem 1rem; /* Reducimos el padding para optimizar espacio */
-  text-align: center;
-}
+  /* General Styles for Mobile Footer */
+  footer {
+    background-color: var(--dark-color);
+    color: #333;
+    padding: 1.5rem 1rem;
+    /* Reducimos el padding para optimizar espacio */
+    text-align: center;
+  }
 
-.footer-container {
-  display: flex;
-  flex-direction: column; /* Alinea elementos en columna */
-  align-items: center; /* Centra todos los elementos horizontalmente */
-  gap: 1.5rem; /* Espaciado entre las secciones */
-}
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    /* Alinea elementos en columna */
+    align-items: center;
+    /* Centra todos los elementos horizontalmente */
+    gap: 1.5rem;
+    /* Espaciado entre las secciones */
+  }
 
-.footer-logo {
-  display: flex;
-  justify-content: center; /* Asegura que el logo esté centrado */
-  margin: 0 auto; /* Elimina cualquier margen que lo desplace */
-}
+  .footer-logo {
+    display: flex;
+    justify-content: center;
+    /* Asegura que el logo esté centrado */
+    margin: 0 auto;
+    /* Elimina cualquier margen que lo desplace */
+  }
 
-.footer-logo img {
-  max-height: 40px; /* Ajusta el tamaño del logo para dispositivos móviles */
-  margin-bottom: 1rem; /* Agrega espacio debajo del logo */
-}
+  .footer-logo img {
+    max-height: 40px;
+  }
 
-.footer-divider {
-  width: 80%; /* Línea más corta, proporcional al diseño centrado */
-  height: 1px; /* Línea delgada */
-  background-color: #333;
-  margin: 0 auto; /* Centra la línea horizontal */
-}
+  .footer-divider {
+    width: 50%;
+    /* Línea más corta, proporcional al diseño centrado */
+    height: 1px;
+    /* Línea delgada */
+    background-color: #333;
+    margin: 0 auto;
+    /* Centra la línea horizontal */
+  }
 
-.footer-info {
-  display: flex;
-  flex-direction: column; /* Mantén las etiquetas del mail y ubicación en columna */
-  gap: 0.5rem; /* Espaciado entre las líneas */
-}
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    /* Mantén las etiquetas del mail y ubicación en columna */
+    gap: 0.5rem;
+    /* Espaciado entre las líneas */
+  }
 
-.footer-social {
-  display: flex;
-  justify-content: center; /* Centra los íconos sociales */
-  gap: 0.5rem; /* Espaciado entre íconos */
-}
+  .tamicono {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    /* Ajusta el valor según la distancia que prefieras */
+  }
 
-.footer-social img {
-  max-height: 20px; /* Reduce el tamaño de los íconos */
- 
-}
 
-.copyright {
-  margin-top: 1rem;
-  border-top: 1px solid #333; /* Línea separadora */
-  padding-top: 1rem;
-  font-size: 0.8rem; /* Texto más pequeño para dispositivos móviles */
-  color: #4141419e;
-}
 
-.footer-info {
-  display: flex;
-  flex-direction: column; /* Alinea correo y ubicación en columna */
-  justify-content: center;
-  gap: 0.5rem; /* Espaciado entre las líneas */
-  margin-right: 10%;
-  
-}
+  .footer-info img {
+    max-height: 20px;
+    /* Reduce el tamaño de los íconos */
+
+  }
+
+  .copyright {
+    margin-top: 1rem;
+    border-top: 1px solid #333;
+    /* Línea separadora */
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    /* Texto más pequeño para dispositivos móviles */
+    color: #333;
+  }
+
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    /* Alinea correo y ubicación en columna */
+    justify-content: center;
+    gap: 0.5rem;
+    /* Espaciado entre las líneas */
+    margin-right: 10%;
+
+  }
 
 }
 
@@ -566,27 +1095,71 @@ footer {
 
 /* carrusel--------------------------------------------------------------------------------------------------------------------- */
 
+
+
+
 /* Estilos para el carrusel en móviles */
 @media (max-width: 768px) {
   .featured-products {
     display: block;
     overflow: hidden;
+
   }
 
   .product-card {
-      margin: 0 10px;
+    margin: 0 10px;
+    flex: 0 0 100%;
+    /* Cada slide ocupa el 100% del ancho del contenedor */
   }
 
   .slick-slide {
-      margin: 0 10px;
+    margin: 0 10px;
+    transition: transform 0.5s ease;
   }
 
-  .product-image1, .product-image2, .product-image3, .product-image4 {
-      height: auto;
-      max-height: 300px;
-      object-fit: cover;
+  .product-image1,
+  .product-image2,
+  .product-image3,
+  .product-image4 {
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
   }
-} /* <- AQUÍ SE CIERRA EL MEDIA QUERY */
+
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    /* Color no activo */
+    border-radius: 50%;
+    transition: background-color 0.3s;
+  }
+
+  .dot.active {
+    background-color: #333;
+    /* Color activo */
+  }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
 
 
 
@@ -600,7 +1173,7 @@ footer {
   display: none;
 }
 
-.cuadrotalles{
+.cuadrotalles {
   display: block;
 }
 
@@ -608,22 +1181,26 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Evita que la sombra sobresalga */
-  
-  border-radius: 8px; /* Bordes redondeados */
- 
+  overflow: hidden;
+  /* Evita que la sombra sobresalga */
+
+  border-radius: 8px;
+  /* Bordes redondeados */
+
   transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .cuadro:hover {
   transform: scale(1.15);
-  
+
 }
 
 .cuadro img {
-  max-width: 70%; /* Mantiene el tamaño de la imagen */
+  max-width: 70%;
+  /* Mantiene el tamaño de la imagen */
   height: auto;
-  border-radius: 8px; /* Bordes redondeados */
+  border-radius: 8px;
+  /* Bordes redondeados */
 }
 
 
@@ -631,80 +1208,193 @@ footer {
 /* Mostrar solo en móviles */
 @media (max-width: 768px) {
 
-  .cuadrotalles{
+  .cuadrotalles {
     display: none;
   }
+
   .talles-container {
-      display: grid !important;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      margin: 3rem 1rem;
-      font-size: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 3rem 1rem;
+    font-size: 1rem;
   }
 
   .talle-box {
-      background-color: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      text-align: left;
-      color: #333;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
 
   .talle-box h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
   }
 
   .talle-box p {
-      display: block;
+    display: block;
   }
 
-  
-  
-  
+
+
+
   .talle-box img {
-    width: 100px; /* Tamaño inicial de la imagen */
+    width: 100px;
+    /* Tamaño inicial de la imagen */
     transition: all 0.3s ease;
     align-items: center;
   }
-  
+
   .talle-box.expanded {
-    background-color: #f0f0f0; /* Cambia el fondo al expandir */
+    background-color: #f0f0f0;
+    /* Cambia el fondo al expandir */
   }
-  
+
   .talle-box.expanded img {
-    width: 230px; /* Tamaño ampliado */
+    width: 20rem;
+    /* Tamaño ampliado */
   }
 
 
- 
+}
 
+@media (max-width: 420px) {
+
+
+  .talle-box.expanded img {
+    width: 18rem;
+    /* Tamaño ampliado */
+  }
+
+}
+
+@media (max-width: 390px) {
+
+
+  .talle-box.expanded img {
+    width: 17rem;
+    /* Tamaño ampliado */
+  }
+
+}
+
+@media (max-width: 380px) {
+
+
+  .talle-box.expanded img {
+    width: 16rem;
+    /* Tamaño ampliado */
+  }
+
+}
+
+.cambiarcolor{
+ 
+  color: #333333a1;
+}
+
+/* Estilo inicial */
+.talle-selector {
+  
+  padding: 3% 2%;
+  background-color: #fde1e7;
+  border: 1px solid #fde1e7;
+  text-align: center;
+  
+}
+
+.talle-selector.activo {
+  background-color: #333; /* Fondo al presionar */
+  color: #f9b8c9; /* Letras en rosa al presionar */
+  outline: none; /* Quita el borde predeterminado */
+  
+}
+
+
+
+.talle-opcion:hover {
+  background-color: #f9b8c9; /* Color al pasar el mouse */
 }
 
 
 
 
 
+/* Estilo para la lista de talles */
+.talle-list {
+  display: inline-block; /* Mostrar en línea horizontal */
+  
+  font-size: 1rem; /* Tamaño de fuente adecuado */
+  
+}
 
 
 
+/* ESTADO INICIAL: Color igual al fondo de la página */
+.select2-container--default .select2-selection--single {
+  background-color: #FDE1E7 !important; /* Fondo rosa claro */
+  border: 1px solid #FDE1E7 !important; /* Borde rosa */
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
 
+/* Letras en color #333 */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #333 !important;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
 
+/* Flecha en color #333 (visible al inicio) */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  border-color: #333 transparent transparent transparent !important;
+}
 
+/* ESTADO ACTIVO: Cuando se presiona */
+.select2-container--default.select2-container--open .select2-selection--single {
+  background-color: #333 !important; /* Fondo oscuro */
+  border: 1px solid #333 !important; /* Borde oscuro */
+}
 
+/* Texto y flecha en rosa cuando se abre */
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__rendered {
+  color: #FDE1E7 !important; /* Letras rosas */
+}
 
+/* Flecha rosa cuando se abre */
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow {
+  border-color: #FDE1E7 transparent transparent transparent !important;
+}
 
+/* ESTILO DEL DESPLEGABLE */
+.select2-dropdown {
+  background-color: #333 !important; /* Fondo oscuro */
+  border: 1px solid #333 !important;
+}
 
+/* Opciones dentro del desplegable */
+.select2-container--default .select2-results__option {
+  background-color: #333 !important;
+  color: #FDE1E7 !important; /* Letras rosas */
+}
 
+/* Color de opción al pasar el mouse */
+.select2-container--default .select2-results__option--highlighted {
+  background-color: #505050 !important;
+  color: #FDE1E7 !important; /* Letras rosas */
+}
 
-
-
-
-
+/* Transición suave al cambiar estados */
+.select2-container--default .select2-selection--single {
+  transition: background-color 0.3s, color 0.3s;
+}
 
 
 
