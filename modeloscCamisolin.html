@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PijamasInfinite</title>
+    <title>Camisolines de Modal | Suaves y Femeninos | Pijamas Infinite</title>
+
     <link rel="stylesheet" href="modelo.css">
-     <!-- Agrega el siguiente código dentro de la etiqueta <head> -->
-        <link rel="stylesheet" type="text/css"
+    <!-- Agrega el siguiente código dentro de la etiqueta <head> -->
+    <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
@@ -15,100 +16,89 @@
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <style>
-        /* Variables CSS para fácil personalización */
-        :root {
-            --primary-color: #F8A2B3;
-            --secondary-color: #2c3e50;
-            --accent-color: rgb(255, 255, 255);
-            --light-color: #f8f9fa;
-            --dark-color: #F8A2B3;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-
-        }
-
-        body {
-            background-color: var(--light-color);
-            color: var(--dark-color);
-        }
-
-        /* Header Styles */
-        header {
-            background-color: var(--primary-color);
-            padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo {
-            height: 50px;
-            margin-right: 1rem;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
-        }
-
-        .nav-links a {
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Cover Section */
-        .cover {
-            height: 80vh;
-            background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)),
-                url('img/Portada.png') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-
-        .cover-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .cover-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
+        
 
         /* Main Content */
         main {
             max-width: 1200px;
             margin: 4rem auto;
             padding: 0 1rem;
+        }
+
+
+
+        .modelos2 {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .modelos {
+                display: none;
+            }
+
+
+           
+            .PC {
+                display: none;
+            }
+
+            /* MODELOS */
+
+            .modelos2 {
+                display: flex;
+                flex-direction: column;
+                /* Alinea los elementos en columna */
+                align-items: center;
+                /* Centra los elementos horizontalmente */
+                width: 100%;
+                /* Ajusta el ancho del contenedor para que coincida con el ancho de los elementos hijos */
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 10%;
+            }
+
+            .modelos2 img {
+                width: 100%;
+                /* Asegúrate de que la imagen ocupe el ancho completo del contenedor */
+                height: auto;
+
+            }
+
+            .textoycarrito1 {
+                background-color: #FDE1E7;
+                color: #333;
+                padding: 15px;
+                width: 100%;
+                /* Asegúrate de que el ancho del contenido de texto coincida con el ancho del contenedor */
+                text-align: center;
+            }
+
+            .boton1 {
+                background-color: #F8A2B3;
+                color: #333333;
+                border: none;
+
+                border-radius: 25px;
+                padding: 10px 20px;
+                cursor: pointer;
+                text-align: center;
+                font-size: larger;
+                transition: background-color 0.3s ease;
+
+                margin: 0 auto;
+                margin-top: 0.4rem;
+                /* Empujar el botón hacia abajo */
+                /* Centrar el botón horizontalmente */
+            }
+
+            .boton1:hover {
+                background-color: #FBC1CC;
+            }
+
+
+
+
         }
 
         .featured-products {
@@ -167,310 +157,17 @@
             font-weight: bold;
             color: var(--accent-color);
         }
-
-        /* Footer Styles */
-        footer {
-            background-color: var(--dark-color);
-            color: #333;
-            padding: 2rem 1rem;
-            margin-top: 3rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-
-
-
-
-
-        .copyright {
-            text-align: center;
-        }
-
-        .header-mobile {
-            display: none;
-        }
-
-        .modal {
-            display: none;
-        }
-
-
-        .modelos2 {
-            display: none;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .modelos {
-                display: none;
-            }
-
-
-            .nav-links {
-                display: none;
-            }
-
-            .cover-content h1 {
-                font-size: 2rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                /* Asegura que los elementos estén centrados verticalmente */
-            }
-
-            /* Oculta la versión de escritorio */
-            .headerpc {
-                display: none;
-            }
-
-            .header-mobile {
-                display: flex;
-                width: 100%;
-                justify-content: center;
-                /* Centra los elementos horizontalmente */
-                align-items: center;
-                /* Centra los elementos verticalmente */
-                gap: 20px;
-                /* Espaciado entre logo y menú */
-            }
-
-            .menu-toggle {
-                margin-left: 0;
-                /* Asegura que no se desplace hacia la derecha */
-
-            }
-
-            .logo {
-                height: 50px;
-            }
-
-            .menu-icon img {
-                width: 40px;
-                height: 40px;
-            }
-
-            .menu-toggle {
-                background: none;
-                border: none;
-                cursor: pointer;
-                margin-left: auto;
-                /* Alinea el menú hamburguesa a la derecha */
-            }
-
-            /* Estilo del Modal */
-            .modal {
-                display: none;
-                /* Oculto por defecto */
-                position: fixed;
-                z-index: 1000;
-                /* Asegúrate de que esté por encima de otros elementos */
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                overflow: auto;
-                background-color: rgba(0, 0, 0, 0.4);
-                /* Fondo semitransparente */
-            }
-
-            .modal-content {
-                display: block;
-                background-color: #F8A2B3;
-                border: 2px solid #FDE1E7;
-                color: #333;
-                margin: 0% auto;
-                padding: 20px;
-                margin-left: 29.9%;
-                width: 70%;
-                position: relative;
-                /* Asegura que los elementos internos se posicionen respecto a este contenedor */
-            }
-
-            .modal-content a {
-                color: #333;
-                /* Cambia el color del texto */
-                text-decoration: none;
-                /* Elimina el subrayado */
-            }
-
-            .modal-content a:hover {
-                color: #F8A2B3;
-                /* Cambia el color al pasar el cursor */
-                text-decoration: underline;
-                /* Opcional: subrayado al pasar el cursor */
-            }
-
-
-            .modal-content ul {
-                list-style-type: none;
-                /* Elimina los puntos */
-                padding: 0;
-                margin: 0;
-                text-align: left;
-                /* Opcional: centra los elementos de la lista */
-            }
-
-
-            .modal-content li {
-                display: flex;
-                /* Alinea íconos y texto horizontalmente */
-                align-items: center;
-                /* Centra verticalmente la imagen con el texto */
-                margin-bottom: 20px;
-                /* Espaciado entre los elementos de la lista */
-            }
-
-            .modal-content img {
-                width: 24px;
-                /* Ajusta el tamaño del ícono */
-                height: 24px;
-                /* Ajusta el tamaño del ícono */
-                margin-right: 10px;
-                /* Espacio entre ícono y texto */
-                vertical-align: middle;
-                /* Centra mejor dentro de su línea base */
-            }
-
-            .modal-content a {
-                display: inline-block;
-                /* Asegura un buen comportamiento en flexbox */
-                line-height: 1.2;
-                /* Ajusta el espaciado entre las líneas del texto */
-                font-size: 18px;
-                /* Tamaño uniforme del texto */
-                color: #333;
-                /* Estilo del texto */
-                text-decoration: none;
-                /* Sin subrayado */
-            }
-
-
-
-
-            .adorno {
-                border: none;
-                margin: 10px 0;
-                /* Espaciado entre elementos */
-                height: 1px;
-                /* Altura de la línea */
-                /* background-color: #fd5e7e;  */
-                background-color: #292929;
-                width: 100%;
-                /* Abarca todo el ancho */
-            }
-
-
-
-            .close {
-                color: #333;
-                float: right;
-                font-size: 28px;
-                font-weight: bold;
-                position: absolute;
-                /* Ahora puedes mover la 'X' con precisión */
-                top: 10px;
-                /* Ajusta la posición vertical */
-                right: 10px;
-                /* Ajusta la posición horizontal */
-                cursor: pointer;
-            }
-
-            .close:hover,
-            .close:focus {
-                color: black;
-                text-decoration: none;
-                cursor: pointer;
-            }
-
-            .list-container {
-                margin-top: 50px;
-                /* Da espacio entre la 'X' y la lista */
-            }
-
-            .PC {
-                display: none;
-            }
-
-            /* MODELOS */
-
-            .modelos2 {
-                display: flex;
-                flex-direction: column;
-                /* Alinea los elementos en columna */
-                align-items: center;
-                /* Centra los elementos horizontalmente */
-                width: 100%;
-                /* Ajusta el ancho del contenedor para que coincida con el ancho de los elementos hijos */
-                margin-left: auto;
-                margin-right: auto;
-                margin-bottom: 10%;
-            }
-
-            .modelos2 img {
-                width: 100%;
-                /* Asegúrate de que la imagen ocupe el ancho completo del contenedor */
-                height: auto;
-
-            }
-
-            .textoycarrito1 {
-                background-color: #FDE1E7;
-                color: #333;
-                padding: 15px;
-                width: 100%;
-                /* Asegúrate de que el ancho del contenido de texto coincida con el ancho del contenedor */
-                text-align: center;
-            }
-
-            .boton1 {
-                background-color: #F8A2B3;
-                color: #333333;
-                border: none;
-
-                border-radius: 25px;
-                padding: 10px 20px;
-                cursor: pointer;
-                text-align: center;
-                font-size: larger;
-                transition: background-color 0.3s ease;
-
-                margin: 0 auto;
-                margin-top: 0.4rem; /* Empujar el botón hacia abajo */
-                /* Centrar el botón horizontalmente */
-            }
-
-            .boton1:hover {
-                background-color: #FBC1CC;
-            }
-
-
-        }
     </style>
-
 </head>
 
-<body>
+<body data-categoria="Camisolín">
     <header>
-        <nav class="PC">
+        <nav class="headerpc">
             <div class="logo-container">
                 <img src="img/Logo.png" alt="Logo" class="logo">
 
             </div>
-            <ul class="nav-links ">
+            <ul class="nav-links">
                 <li><a href="index.html">INICIO</a></li>
                 <li><a href="talles.html">TALLES</a></li>
                 <li><a href="sobrenosotras.html">SOBRE NOSOTROS</a></li>
@@ -495,28 +192,29 @@
                     <ul>
                         <li class="alineo">
                             <img src="img/home.png" alt="imghome">
-                            <a href="index.html">Inicio</a>
+                            <a href="index.html"><b>Inicio</b></a>
                         </li>
                         <div class="adorno"></div>
                         <li>
                             <img src="img/sobre.nosotros.png" alt="img2">
-                            <a href="sobrenosotras.html">Sobre Nosotros</a>
+                            <a href="sobrenosotras.html"><b>Sobre Nosotros</b></a>
                         </li>
                         <div class="adorno"></div>
                         <li>
                             <img src="img/talles.png" alt="img3">
-                            <a href="talles.html">Talles</a>
+                            <a href="talles.html"><b>Talles</b></a>
                         </li>
                         <div class="adorno"></div>
                         <li>
                             <img src="img/contacto2.png" alt="imgcontacto">
-                            <a href="contacto.html">Contacto</a>
+                            <a href="contacto.html"><b>Contacto</b></a>
                         </li>
                         <div class="adorno"></div>
                     </ul>
                 </div>
             </div>
         </div>
+
     </header>
 
 
@@ -541,77 +239,80 @@
 
 
 
+       
         <div class="modelos colorderecha"> <!-- DERECHA -->
-
             <div class="textoycarrito">
                 <h3 class="mali-semibold">GOLDEN</h3>
-
-                <h5 class=" intermonserrat">TALLES DISPONIBLES<br>
-                    <span>XL</span>
-                </h5>
-                <p class="boton intermonserrat  add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
-
+                <h5 class="poppins-regular cambiarcolor">TALLES DISPONIBLES<br><span>sin stock</span></h5>
+                <p class="boton poppins-regular add-to-cart" id="boton-pedir-ahora"><b>¡Quiero comprar!</b></p>
             </div>
-            <img src="img/golden.png" alt="foto2">
+            <img src="img/golden.png" alt="Camisolín de mujer estilo elegante, color negro y dorado, con detalles delicados y cómodo para dormir">
         </div>
-
-
+        
         <div class="modelos colorizquierda"> <!-- IZQUIERDA -->
-            <img class="padding" src="img/laura.png" alt="foto4">
+            <img class="padding" src="img/laura.png" alt="Camisolín de mujer fino, blanco con estampa delicado, suave al tacto, ideal para noches frescas">
             <div class="textoycarrito">
                 <h3 class="mali-semibold">LAURA</h3>
-
-                <h5 class=" intermonserrat">TALLES DISPONIBLES<br>M</h5>
-                <p class="boton intermonserrat  add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
-
+                <h5 class="poppins-regular cambiarcolor ">TALLES DISPONIBLES<br>
+                    <select class="talle-selector poppins-regular cambiarcolor">
+                        <option value="M">M</option>
+                 
+                     
+                    </select>
+                </h5>
+                <p class="boton poppins-regular add-to-cart" id="boton-pedir-ahora"><b>¡Quiero comprar!</b></p>
             </div>
         </div>
-
-
+        
         <div class="modelos colorderecha"> <!-- DERECHA -->
-
             <div class="textoycarrito">
                 <h3 class="mali-semibold">MARTINA</h3>
-
-                <h5 class=" intermonserrat">TALLES DISPONIBLES<br>
-                    <span>XL</span>
-                </h5>
-                <p class="boton intermonserrat  add-to-cart" id="boton-pedir-ahora">Comprar Ahora</p>
-
+                <h5 class="poppins-regular cambiarcolor">TALLES DISPONIBLES<br><span>sin stock</span></h5>
+                <p class="boton poppins-regular add-to-cart" id="boton-pedir-ahora"><b>¡Quiero comprar!</b></p>
             </div>
-            <img src="img/martina2.png" alt="foto2">
+            <img src="img/martina2.png" alt="Camisolín de mujer con diseño de tela suave, ideal para descansar con estilo y comodidad">
         </div>
-
-
-
-        <!-- FOTOS VERCION CELULAR  -->
-
+        
+        <!-- FOTOS VERSIÓN CELULAR -->
+        
         <div class="modelos2">
-            <img src="img/golden.png" alt="foto1">
+            <img src="img/golden.png" alt="Camisolín negro y dorado para mujer, diseño elegante y cómodo, perfecto para un descanso relajante">
             <div class="textoycarrito1">
                 <h3 class="mali-semibold">GOLDEN</h3>
-                <h5 class=" intermonserrat">TALLES DISPONIBLES<br>XL</h5>
-                <p class="boton1 intermonserrat  " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+                <h5 class="poppins-regular cambiarcolor">TALLES DISPONIBLES<br>sin stock</h5>
+                <p class="boton1 poppins-regular" data-app-link="https://wa.me/2241697504"><b>¡Quiero comprar!</b></p>
             </div>
         </div>
-
+        
         <div class="modelos2">
-            <img src="img/laura.png" alt="foto1">
+            <img src="img/laura.png" alt="Camisolín femenino de diseño sencillo y delicado, ideal para noches cómodas">
             <div class="textoycarrito1">
                 <h3 class="mali-semibold">LAURA</h3>
-                <h5 class=" intermonserrat">TALLES DISPONIBLES<br>M</h5>
-                <p class="boton1 intermonserrat  " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+                <h5 class="poppins-regular cambiarcolor ">TALLES DISPONIBLES<br>
+                    <select class="talle-selector poppins-regular cambiarcolor">
+                        <option value="M">M</option>
+                 
+                     
+                    </select>
+                </h5>
+                <p class="boton1 poppins-regular" data-app-link="https://wa.me/2241697504"><b>¡Quiero comprar!</b></p>
             </div>
         </div>
-
+        
         <div class="modelos2">
-            <img src="img/martina2.png" alt="foto1">
+            <img src="img/martina2.png" alt="Camisolín de mujer con tela suave y ligera, diseñado para brindar comodidad durante el descanso">
             <div class="textoycarrito1">
                 <h3 class="mali-semibold">MARTINA</h3>
-                <h5 class=" intermonserrat">TALLES DISPONIBLES<br>XL</h5>
-                <p class="boton1 intermonserrat  " data-app-link="https://wa.me/2241697504">Comprar Ahora</p>
+                <h5 class="poppins-regular cambiarcolor">TALLES DISPONIBLES<br>sin stock</h5>
+                <p class="boton1 poppins-regular" data-app-link="https://wa.me/2241697504"><b>¡Quiero comprar!</b></p>
             </div>
         </div>
+        
+
+
+
+
+
 
 
 
@@ -620,80 +321,199 @@
 
 
         <div class="linea izquierda">
-            <h2 style="text-align: left; margin: 2rem 0; color: #333;" class=".mali-bold ">Precios y Estilos</h2>
+            <h2 style="text-align: left; margin: 2rem 0; color: #333;" class="mali-bold">Precios y Estilos</h2>
         </div>
+
+
         <div class="featured-products">
             <div class="product-card">
                 <div class="product-image1"></div>
-                <div class="product-info intermonserrat">
+                <div class="product-info poppins-regular">
                     <h3>Pijama de Invierno</h3>
-                    <p>Cuando pruebes las telas sueves, sera un camino de ida.</p>
+                    <p>Pijamas de modal premium con spandex, perfectas para mantenerte cálida y cómoda durante el invierno.</p>
                     <p class="price">$55.000</p>
                     <a href="invierno.html">
-                        <button
-                            style="background: #FDCDD6; color: #333; border: none; padding: 0.5rem 1rem; border-radius: 5px;">¡Encuentra
-                            tu favorito!</button>
+                        <button>
+                            <b>¡Toca para ver colección!</b>
+                        </button>
                     </a>
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image2"></div>
-                <div class="product-info intermonserrat">
-                    <h3>Pijama Intermedios</h3>
-                    <p>Si preferis largo abajo y corto arriba, son para ti.</p>
+                <div class="product-info poppins-regular">
+                    <h3>Pijama Intermedio</h3>
+                    <p>Si te gusta el estilo largo abajo y corto arriba, estos pijamas son ideales para un look moderno y cómodo.</p>
                     <p class="price">$52.000</p>
                     <a href="intermedio.html">
-                        <button
-                            style="background: #FDCDD6; color: #333; border: none; padding: 0.5rem 1rem; border-radius: 5px;">¡Encuentra
-                            tu favorito!</button>
+                        <button>
+                            <b>¡Toca para ver colección!</b>
+                        </button>
                     </a>
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image3"></div>
-                <div class="product-info intermonserrat">
+                <div class="product-info poppins-regular">
                     <h3>Pijama de Verano</h3>
-                    <p>Disfrutar modelos comodos, frescos y muy bellos.</p>
+                    <p>Modelos frescos, ligeros y cómodos, perfectos para disfrutar del calor sin perder el estilo ni la elegancia.</p>
                     <p class="price">$45.000</p>
                     <a href="verano.html">
-                        <button
-                            style="background: #FDCDD6; color: #333; border: none; padding: 0.5rem 1rem; border-radius: 5px;">¡Encuentra
-                            tu favorito!</button>
+                        <button>
+                            <b>¡Toca para ver colección!</b>
+                        </button>
                     </a>
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image4"></div>
-                <div class="product-info intermonserrat">
+                <div class="product-info poppins-regular">
                     <h3>Camisolines</h3>
-                    <p>Para los amantes de la soltura y Suavidad.</p>
+                    <p>Prendas delicadas que brindan sensación de libertad, ideal para descansar con comodidad y estilo.</p>
                     <p class="price">$42.000</p>
                     <a href="modeloscCamisolin.html">
-                        <button
-                            style="background: #FDCDD6; color: #333; border: none; padding: 0.5rem 1rem; border-radius: 5px;">¡Encuentra
-                            tu favorito!</button>
+                        <button>
+                            <b>¡Toca para ver colección!</b>
+                        </button>
                     </a>
                 </div>
             </div>
         </div>
 
-
-
-
-
+        <div class="carousel-indicators">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+        </div>
     </main>
+    <script>
+        $(document).ready(function () {
+            if (window.innerWidth <= 768) {
+                if (!$('.featured-products').hasClass('slick-initialized')) {
+                    $('.featured-products').slick({
+                        dots: false, // Desactivamos los dots de Slick para usar los personalizados
+                        infinite: false,
+                        speed: 100,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: false
+                    });
 
+                    // Evento de cambio de slide
+                    $('.featured-products').on('afterChange', function (event, slick, currentSlide) {
+                        updateDots(currentSlide);
+                    });
+
+                    // Click en dots personalizados
+                    $('.dot').on('click', function () {
+                        let index = $(this).data('index');
+                        $('.featured-products').slick('slickGoTo', index);
+                    });
+                }
+            }
+
+            // Función para actualizar los dots
+            function updateDots(index) {
+                $('.dot').removeClass('active');
+                $('.dot[data-index="' + index + '"]').addClass('active');
+            }
+        });
+    </script>
+
+
+
+    <script src="boton.js"></script>
     <script src="menu.js"></script>
     <script src="script.js"></script>
-    <script src="boton.js"></script>
-    <footer>
 
-        <div class="copyright">
+    <footer class="PC">
+        <div class="footer-container">
+            <!-- Logo a la izquierda -->
+            <div class="footer-logo">
+                <img src="img/Logo.png" alt="Logo PijamasInfinite">
+            </div>
+
+            <!-- Línea vertical -->
+            <div class="footer-divider"></div>
+
+            <!-- Información: correo y ubicación (al lado derecho de la línea) -->
+            <div class="footer-info">
+                <div class="tamicono poppins-regular">
+                    <img src="img/email.png" alt="">
+                    <p><a href="mailto:marinainfinitepijamas@gmail.com"
+                            style="color: #333;">marinainfinitepijamas@gmail.com</a></p>
+                </div>
+
+                <div class="tamicono poppins-regular">
+                    <img src="img/ubicacion.png" alt="">
+                    <p>Visitanos en Chascomús, provincia Bs. As.</p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="copyright mali-regular">
             <p>&copy; 2025 PijamasInfinite. Todos los derechos reservados.</p>
         </div>
     </footer>
 
 
+    <footer class="mobile">
+        <div class="footer-container">
+            <!-- Logo a la izquierda -->
+            <div class="footer-logo">
+                <img src="img/Logo.png" alt="Logo PijamasInfinite">
+            </div>
+
+            <!-- Línea vertical -->
+            <div class="footer-divider"></div>
+
+
+
+
+            <!-- Información: correo y ubicación (al lado derecho de la línea) -->
+            <div class="footer-info">
+                <div class="tamicono poppins-regular">
+                    <img src="img/email.png" alt="">
+                    <p><a href="mailto:marina.infinite.pijamas24@gmail.com"
+                        style="color: #333;">marina.infinite.pijamas24@gmail.com</a>
+                    </p>
+                </div>
+
+                <div class="tamicono poppins-regular">
+                    <img src="img/ubicacion.png" alt="">
+                    <p>Visítanos en Chascomús, PBA.</p>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+        <div class="copyright mali-regular">
+            <p>&copy; 2025 PijamasInfinite. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
