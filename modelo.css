@@ -1336,6 +1336,66 @@ footer {
 
 
 
+/* ESTADO INICIAL: Color igual al fondo de la página */
+.select2-container--default .select2-selection--single {
+  background-color: #FDE1E7 !important; /* Fondo rosa claro */
+  border: 1px solid #FDE1E7 !important; /* Borde rosa */
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Letras en color #333 */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #333 !important;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+/* Flecha en color #333 (visible al inicio) */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  border-color: #333 transparent transparent transparent !important;
+}
+
+/* ESTADO ACTIVO: Cuando se presiona */
+.select2-container--default.select2-container--open .select2-selection--single {
+  background-color: #333 !important; /* Fondo oscuro */
+  border: 1px solid #333 !important; /* Borde oscuro */
+}
+
+/* Texto y flecha en rosa cuando se abre */
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__rendered {
+  color: #FDE1E7 !important; /* Letras rosas */
+}
+
+/* Flecha rosa cuando se abre */
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow {
+  border-color: #FDE1E7 transparent transparent transparent !important;
+}
+
+/* ESTILO DEL DESPLEGABLE */
+.select2-dropdown {
+  background-color: #333 !important; /* Fondo oscuro */
+  border: 1px solid #333 !important;
+}
+
+/* Opciones dentro del desplegable */
+.select2-container--default .select2-results__option {
+  background-color: #333 !important;
+  color: #FDE1E7 !important; /* Letras rosas */
+}
+
+/* Color de opción al pasar el mouse */
+.select2-container--default .select2-results__option--highlighted {
+  background-color: #505050 !important;
+  color: #FDE1E7 !important; /* Letras rosas */
+}
+
+/* Transición suave al cambiar estados */
+.select2-container--default .select2-selection--single {
+  transition: background-color 0.3s, color 0.3s;
+}
+
 
 
 
