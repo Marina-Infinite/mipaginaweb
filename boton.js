@@ -61,9 +61,11 @@ document.querySelectorAll('.boton1').forEach(function(button) {
 });
 
 $(document).ready(function() {
-  $('.talle-selector').select2({
-      minimumResultsForSearch: Infinity // Esto oculta la barra de búsqueda
-  });
+    // Asegurémonos de inicializar Select2 correctamente
+    $('.talle-selector').select2({
+        minimumResultsForSearch: Infinity,  // Desactiva la barra de búsqueda
+        width: '100%'  // Asegúrate de que tenga un ancho correcto si es necesario
+    });
 });
 
 
