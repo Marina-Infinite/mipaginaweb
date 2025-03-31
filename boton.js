@@ -50,7 +50,7 @@ document.querySelectorAll('.boton1').forEach(function(button) {
         // Personaliza el mensaje según el modelo
         let modelo = this.closest('.textoycarrito1').querySelector('h3').innerText;
         let message = `Hola, me interesa el producto ${modelo} en talle ${talle}, categoría ${categoria}`;
-        let phone = '2241697504'; // Asegúrate de que el número esté en el formato internacional sin el '+' inicial
+        let phone = '2241697504'; 
 
         // Construir el enlace de WhatsApp con el mensaje
         let appLink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
@@ -59,3 +59,12 @@ document.querySelectorAll('.boton1').forEach(function(button) {
         window.location.href = appLink;
     });
 });
+
+$(document).ready(function() {
+  $('.talle-selector').select2({
+      minimumResultsForSearch: Infinity // Esto oculta la barra de búsqueda
+  });
+});
+
+
+
