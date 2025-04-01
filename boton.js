@@ -59,13 +59,12 @@ document.querySelectorAll('.boton1').forEach(function(button) {
         window.location.href = appLink;
     });
 });
+
 $(document).ready(function() {
-    // Asegurémonos de inicializar Select2 correctamente
-    $('.talle-selector').select2({
-        minimumResultsForSearch: Infinity,  // Desactiva la barra de búsqueda
-        width: '100%'  // Asegúrate de que tenga un ancho correcto si es necesario
-    });
+  $('.talle-selector').select2({
+      minimumResultsForSearch: Infinity
+  });
+
+  // Asegurarse de reiniciar Select2
+  $('.talle-selector').trigger('change'); 
 });
-
-
-
