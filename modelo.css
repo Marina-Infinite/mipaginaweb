@@ -1114,7 +1114,8 @@ footer {
 
   .slick-slide {
     margin: 0 10px;
-    transition: transform 0.5s ease;
+    transition: transform 0.9s ease, scroll-behavior 0.9s ease;
+    scroll-behavior: smooth;
   }
 
   .product-image1,
@@ -1326,13 +1327,6 @@ footer {
 
 
 
-/* Estilo para la lista de talles */
-.talle-list {
-  display: inline-block; /* Mostrar en línea horizontal */
-  
-  font-size: 1rem; /* Tamaño de fuente adecuado */
-  
-}
 
 
 /* Estilo inicial del contenedor del select */
@@ -1343,14 +1337,13 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between; /* Asegura que la flecha y el texto estén separados correctamente */
-
 }
 
 /* Letras en color #333 */
 .select2-container--default .select2-selection--single .select2-selection__rendered {
   color: #333;
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
+  font-size: 0.83rem;
   margin-left: -5px; /* Mueve la letra un poco a la izquierda */
 }
 
@@ -1375,12 +1368,15 @@ footer {
 /* Texto y flecha en rosa cuando se abre */
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__rendered {
   color: #FDE1E7 !important;
-  
 }
 
-/* Flecha rosa cuando está abierto */
-.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
-  border-color: #FDE1E7 transparent transparent transparent !important;
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow::after {
+  content: "▲"; /* Flecha hacia arriba */
+  font-size: 8px;
+  color: #FDE1E7; /* Color rosa */
+  position: absolute;
+  right: 7px;
+ 
 }
 
 /* Estilo del dropdown */
@@ -1393,6 +1389,7 @@ footer {
 .select2-container--default .select2-results__option {
   background-color: #333 !important;
   color: #FDE1E7 !important;
+  font-size: 0.83rem;
 }
 
 /* Color de opción al pasar el mouse */
