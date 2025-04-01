@@ -1348,9 +1348,9 @@ footer {
 
 /* Letras en color #333 */
 .select2-container--default .select2-selection--single .select2-selection__rendered {
-  color: #333 !important;
+  color: #333;
   font-family: 'Poppins', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   margin-left: -5px; /* Mueve la letra un poco a la izquierda */
 }
 
@@ -1375,6 +1375,7 @@ footer {
 /* Texto y flecha en rosa cuando se abre */
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__rendered {
   color: #FDE1E7 !important;
+  
 }
 
 /* Flecha rosa cuando está abierto */
@@ -1404,3 +1405,6 @@ footer {
 .select2-container--default .select2-selection--single {
   transition: background-color 0.3s, color 0.3s;
 }
+
+
+
