@@ -1336,13 +1336,15 @@ footer {
 
 
 
-/* ESTADO INICIAL: Color igual al fondo de la página */
+/* Estilo inicial del contenedor del select */
 .select2-container--default .select2-selection--single {
   background-color: #FDE1E7 !important; /* Fondo rosa claro */
   border: 1px solid #FDE1E7 !important; /* Borde rosa */
   height: 40px;
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Asegura que la flecha y el texto estén separados correctamente */
+  padding: 0 10px; /* Agrega espacio a los lados para que no esté pegado al borde */
 }
 
 /* Letras en color #333 */
@@ -1352,49 +1354,57 @@ footer {
   font-size: 16px;
 }
 
-/* Flecha en color #333 (visible al inicio) */
+/* Asegúrate de que la flecha se alinee correctamente */
 .select2-container--default .select2-selection--single .select2-selection__arrow {
-  border-color: #333 transparent transparent transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ESTADO ACTIVO: Cuando se presiona */
+/* Alineación de la flecha en color #333 al inicio */
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-color: #333 transparent transparent transparent !important; /* Flecha visible */
+}
+
+/* Cambios cuando se abre el select */
 .select2-container--default.select2-container--open .select2-selection--single {
-  background-color: #333 !important; /* Fondo oscuro */
-  border: 1px solid #333 !important; /* Borde oscuro */
+  background-color: #333 !important;
+  border: 1px solid #333 !important;
 }
 
 /* Texto y flecha en rosa cuando se abre */
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__rendered {
-  color: #FDE1E7 !important; /* Letras rosas */
+  color: #FDE1E7 !important;
 }
 
-/* Flecha rosa cuando se abre */
-.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow {
+/* Flecha rosa cuando está abierto */
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
   border-color: #FDE1E7 transparent transparent transparent !important;
 }
 
-/* ESTILO DEL DESPLEGABLE */
+/* Estilo del dropdown */
 .select2-dropdown {
-  background-color: #333 !important; /* Fondo oscuro */
+  background-color: #333 !important;
   border: 1px solid #333 !important;
 }
 
 /* Opciones dentro del desplegable */
 .select2-container--default .select2-results__option {
   background-color: #333 !important;
-  color: #FDE1E7 !important; /* Letras rosas */
+  color: #FDE1E7 !important;
 }
 
 /* Color de opción al pasar el mouse */
 .select2-container--default .select2-results__option--highlighted {
   background-color: #505050 !important;
-  color: #FDE1E7 !important; /* Letras rosas */
+  color: #FDE1E7 !important;
 }
 
-/* Transición suave al cambiar estados */
+/* Transición suave */
 .select2-container--default .select2-selection--single {
   transition: background-color 0.3s, color 0.3s;
 }
+
 
 
 
