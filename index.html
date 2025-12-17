@@ -24,6 +24,7 @@
             background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)),
                 url('img/Portada.png') center/cover;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
@@ -33,12 +34,110 @@
         .cover-content h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            min-height: 4rem;
         }
 
         .cover-content p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
         }
+
+        /* Animación de palabras */
+        .word1 {
+            opacity: 0;
+            display: inline-block;
+            margin: 0 0.3rem;
+            animation: fadeInOut 0.6s ease-in-out forwards;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .word1.fade-out {
+            animation: fadeOut 0.4s ease-in-out forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+
+  /* Botón Ver Pijamas */
+.btn-ver-pijamas {
+    background-color: #F8A2B3;
+    color: #333;
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    width: auto;
+}
+
+.btn-ver-pijamas:hover {
+    background-color: #FECED3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    /* Ajustar tamaño del texto en portada */
+    .cover-content h1 {
+        font-size: 1.8rem;  /* Reducido de 2.7rem */
+        margin-top: 8rem;   /* Reducido para que no esté tan abajo */
+        margin-bottom: 1rem;
+    }
+    
+    /* Ajustar botón para que quede dentro de la portada */
+    .btn-ver-pijamas {
+        font-size: 0.9rem;
+        padding: 10px 25px;
+        margin-top: 1.5rem;
+        margin-bottom: 2rem; /* Espacio antes del final de la sección */
+    }
+    
+    /* Asegurar que la portada tenga altura suficiente */
+    .cover {
+        height: 85vh; /* Aumentado de 80vh para dar más espacio */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* Para pantallas más pequeñas (celulares pequeños) */
+@media (max-width: 390px) {
+    .cover-content h1 {
+        font-size: 1.6rem;  /* Aún más pequeño en celulares chicos */
+        margin-top: 6rem;
+    }
+    
+    .btn-ver-pijamas {
+        font-size: 0.85rem;
+        padding: 9px 22px;
+    }
+}
+
+
 
         /* Main Content */
         main {
@@ -168,14 +267,17 @@
         <div class="cover-content .mali-bold ">
             <h1 class="mali-bold-italic verenmovil">
                 <span class="word1">Para</span>
-                <span class="word1">estar</span>
+                <span class="word1">sentirte</span>
                 <span class="word1">linda</span>
                 <span class="word1">y</span>
-                <span class="word1">comoda</span>
+                <span class="word1">cómoda</span>
                 <span class="word1">en</span>
                 <span class="word1">casa</span>
+                
+                
             </h1>
         </div>
+        <button class="btn-ver-pijamas" onclick="scrollToProducts()">Ver Pijamas</button>
     </section>
 
     <main>
@@ -184,7 +286,7 @@
         </div>
 
 
-        <div class="featured-products">
+        <div class="featured-products" id="productos">
             <div class="product-card">
                 <div class="product-image1"></div>
                 <div class="product-info poppins-regular">
@@ -201,7 +303,7 @@
             <div class="product-card">
                 <div class="product-image2"></div>
                 <div class="product-info poppins-regular">
-                    <h3>Pijama Intermedio</h3>
+                    <h3>Pijama media-estación</h3>
                     <p>Si te gusta el estilo largo abajo y corto arriba, estos pijamas son ideales para un look moderno y cómodo.</p>
                     <p class="price">$52.000</p>
                     <a href="intermedio.html">
@@ -248,12 +350,74 @@
             <span class="dot" data-index="3"></span>
         </div>
     </main>
+
     <script>
+        // Función para scroll suave al carrusel
+        function scrollToProducts() {
+            document.getElementById('productos').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Animación de palabras con loop infinito
+        function animateWords() {
+            const words = document.querySelectorAll('.word1');
+            const totalWords = words.length;
+            let currentWord = 0;
+
+            // Reset todas las palabras
+            words.forEach(word => {
+                word.style.opacity = '0';
+                word.style.animation = 'none';
+            });
+
+            // Función para mostrar palabras una por una
+            function showNextWord() {
+                if (currentWord < totalWords) {
+                    words[currentWord].style.animation = 'fadeInOut 0.6s ease-in-out forwards';
+                    currentWord++;
+                    setTimeout(showNextWord, 300); // Retraso entre palabras
+                } else {
+                    // Todas las palabras mostradas, esperar y luego desvanecer
+                    setTimeout(fadeOutAllWords, 2000); // Espera 2 segundos antes de desvanecer
+                }
+            }
+
+            // Función para desvanecer todas las palabras
+            function fadeOutAllWords() {
+                words.forEach((word, index) => {
+                    setTimeout(() => {
+                        word.classList.add('fade-out');
+                    }, index * 100); // Desvanecer con pequeño retraso entre cada una
+                });
+
+                // Después de desvanecer, reiniciar la animación
+                setTimeout(() => {
+                    words.forEach(word => {
+                        word.classList.remove('fade-out');
+                        word.style.opacity = '0';
+                        word.style.animation = 'none';
+                    });
+                    currentWord = 0;
+                    setTimeout(showNextWord, 500); // Espera medio segundo antes de empezar de nuevo
+                }, totalWords * 100 + 500);
+            }
+
+            showNextWord();
+        }
+
+        // Iniciar la animación cuando carga la página
+        window.addEventListener('load', () => {
+            setTimeout(animateWords, 500);
+        });
+
+        // Carrusel de productos
         $(document).ready(function () {
             if (window.innerWidth <= 768) {
                 if (!$('.featured-products').hasClass('slick-initialized')) {
                     $('.featured-products').slick({
-                        dots: false, // Desactivamos los dots de Slick para usar los personalizados
+                        dots: false,
                         infinite: false,
                         speed: 100,
                         slidesToShow: 1,
@@ -261,12 +425,10 @@
                         arrows: false
                     });
 
-                    // Evento de cambio de slide
                     $('.featured-products').on('afterChange', function (event, slick, currentSlide) {
                         updateDots(currentSlide);
                     });
 
-                    // Click en dots personalizados
                     $('.dot').on('click', function () {
                         let index = $(this).data('index');
                         $('.featured-products').slick('slickGoTo', index);
@@ -274,16 +436,12 @@
                 }
             }
 
-            // Función para actualizar los dots
             function updateDots(index) {
                 $('.dot').removeClass('active');
                 $('.dot[data-index="' + index + '"]').addClass('active');
             }
         });
     </script>
-
-
-
 
     <script src="menu.js"></script>
     <script src="script.js"></script>
