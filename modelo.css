@@ -272,14 +272,17 @@ nav {
 
 
 /* Responsive Design */
+
+
+  /* Responsive Design */
 @media (max-width: 768px) {
 
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    /* Asegura que los elementos estén centrados verticalmente */
+    padding: 0.5rem 1rem; /* Agregado para controlar el padding */
+    overflow-x: hidden; /* Evita el scroll horizontal */
   }
 
   /* Oculta la versión de escritorio */
@@ -290,32 +293,28 @@ nav {
   .header-mobile {
     display: flex;
     width: 100%;
-
     justify-content: space-between;
-   
     align-items: center;
-    
-    gap: 40%;
-   
+    gap: 0; /* Cambiado de 40% a 0 */
   }
 
-
-
   .logo {
-    height: 50px;
+    height: 40px; /* Reducido de 50px a 40px */
+    max-width: 120px; /* Agregado límite de ancho */
+    object-fit: contain; /* Mantiene proporciones */
   }
 
   .menu-icon img {
-    width: 40px;
-    height: 40px;
+    width: 30px; /* Reducido de 40px a 30px */
+    height: 30px; /* Reducido de 40px a 30px */
   }
 
   .menu-toggle {
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: auto;
-    /* Alinea el menú hamburguesa a la derecha */
+    padding: 5px; /* Agregado para dar área de clic */
+    flex-shrink: 0; /* Evita que se comprima */
   }
 
   /* Estilo del Modal */
@@ -486,7 +485,7 @@ nav {
 
 
   .cover-content h1 {
-    font-size: 2.7rem;
+    font-size: 2rem;
     margin-top: 15rem;
 
   }
@@ -497,127 +496,44 @@ nav {
 }
 
 @media (max-width: 390px) {
-
-
   .header-mobile {
     display: flex;
     width: 100%;
-
     justify-content: space-between;
-   
     align-items: center;
-    
-    gap: 35%;
-   
+    gap: 0; /* Cambiado de 35% a 0 */
   }
-
+  
+  .logo {
+    height: 35px; /* Aún más pequeño en pantallas chicas */
+    max-width: 100px;
+  }
+  
+  .menu-icon img {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 @media (max-width: 380px) {
-
-
   .header-mobile {
     display: flex;
     width: 100%;
-
     justify-content: space-between;
-   
     align-items: center;
-    
-    gap: 30%;
-   
+    gap: 0; /* Cambiado de 30% a 0 */
   }
-
 }
-
 
 /* PORTADA--------------------------------------------------------------------------------------------------------------------- */
 
-.word1 {
-  opacity: 0;
-  animation: fadeInOut 10s infinite;
-  animation-fill-mode: forwards;
-}
 
-.word1:nth-child(1) {
-  animation-delay: 0.5s;
-}
-
-.word1:nth-child(2) {
-  animation-delay: 1.5s;
-}
-
-.word1:nth-child(3) {
-  animation-delay: 2.5s;
-}
-
-.word1:nth-child(4) {
-  animation-delay: 3.5s;
-}
-
-.word1:nth-child(5) {
-  animation-delay: 4.5s;
-}
-
-.word1:nth-child(6) {
-  animation-delay: 5.5s;
-}
-
-.word1:nth-child(7) {
-  animation-delay: 6.5s;
-}
-
-@keyframes fadeInOut {
-
-  0%,
-  100% {
-    opacity: 0;
-  }
-
-  /* Empieza y termina invisible */
-  10% {
-    opacity: 1;
-  }
-
-  /* Primera palabra aparece */
-  20% {
-    opacity: 1;
-  }
-
-  /* Segunda palabra aparece */
-  30% {
-    opacity: 1;
-  }
-
-  40% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  60% {
-    opacity: 1;
-  }
-
-  70% {
-    opacity: 1;
-  }
-
-  /* Todas las palabras visibles */
-  85% {
-    opacity: 0;
-  }
-
-  /* Se desvanecen juntas */
-}
 
 button {
   background: #FDCDD6;
   color: #333;
   border: none;
-  padding: 0.5rem;
+  padding: 0.6rem;
   border-radius: 50px;
   width: 100%;
   cursor: pointer;
@@ -1395,8 +1311,3 @@ footer {
 .select2-container--default .select2-selection--single {
   transition: background-color 0.3s, color 0.3s;
 }
-
-
-
-
-
