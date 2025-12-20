@@ -276,7 +276,11 @@ nav {
 
 @media (max-width: 768px) {
 
- h1 {
+ /* h1 {
+  font-size:xx-large;
+ } */
+
+  h2 {
   font-size:x-large;
  }
 
@@ -318,8 +322,8 @@ nav {
   }
 
   .menu-icon img {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
   }
 
   .menu-toggle {
@@ -716,6 +720,13 @@ button:active {
     line-height: 1.5;
     margin-bottom: 9%;
   }
+
+  .redes {
+
+  margin-bottom: 3%;
+  margin-top: 3rem;
+ 
+}
 
 }
 
