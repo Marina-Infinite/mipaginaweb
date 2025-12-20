@@ -1,15 +1,11 @@
+// --- VERSIÓN ESCRITORIO (.boton) ---
 document.querySelectorAll('.boton').forEach(function(button) {
     button.addEventListener('click', function(event) {
-        // Obtiene el modelo
-        let modelo = this.closest('.textoycarrito').querySelector('h3').innerText;
-        
-        // Obtiene el talle seleccionado
-        let talle = this.closest('.textoycarrito').querySelector('.talle-selector').value;
-        
-        // Obtiene la categoría desde el atributo data del body
+        let contenedor = this.closest('.textoycarrito');
+        let modelo = contenedor.querySelector('h3').innerText;
+        let talle = contenedor.querySelector('.talle-selector').value;
         let categoria = document.body.getAttribute('data-categoria');
         
-        // Personaliza el mensaje
         let message = `Hola, me interesa el producto ${modelo} en talle ${talle}, categoría ${categoria}`;
         let phone = '542241697504';
         
@@ -17,56 +13,40 @@ document.querySelectorAll('.boton').forEach(function(button) {
     });
 });
 
-document.querySelectorAll('.talle-selector').forEach(function(button) {
-    button.addEventListener('click', function() {
-      // Si el botón ya está seleccionado, lo deseleccionamos
-      if (this.classList.contains('activo')) {
-        this.classList.remove('activo');
-      } else {
-        // Primero, removemos la clase 'activo' de todos los botones
-        document.querySelectorAll('.talle-selector').forEach(function(btn) {
-          btn.classList.remove('activo');
-        });
-        // Luego, agregamos la clase 'activo' al botón clickeado
-        this.classList.add('activo');
-      }
+// --- VERSIÓN MÓVIL (.boton1) CORREGIDA ---
+document.querySelectorAll('.boton1').forEach(function(button) {
+    button.addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        // 1. Buscamos el contenedor correcto de móvil
+        let contenedor = this.closest('.textoycarrito1');
+        
+        // 2. OBTENEMOS LOS DATOS (Esto es lo que faltaba o daba error)
+        let modelo = contenedor.querySelector('h3').innerText;
+        let talle = contenedor.querySelector('.talle-selector').value; // Ahora sí lo busca
+        let categoria = document.body.getAttribute('data-categoria'); // Ahora sí lo busca
+        
+        let message = `Hola, me interesa el producto ${modelo} en talle ${talle}, categoría ${categoria}`;
+        let phone = '542241697504'; // Asegúrate de incluir el código de país 54
+
+        // 3. Abrir WhatsApp
+        let appLink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        window.location.href = appLink;
     });
 });
-  
 
+// --- FUNCIONES AUXILIARES ---
 function handleLinkClick(event, appLink, webLink) {
     event.preventDefault();
-    // abre whatsapp web
     setTimeout(function() {
         window.location.href = webLink;
     }, 1000);
 }
 
-// Selecciona todos los elementos con la clase .boton1
-document.querySelectorAll('.boton1').forEach(function(button) {
-    button.addEventListener('click', function(event) {
-        event.preventDefault();
-        
-        // Personaliza el mensaje según el modelo
-        let modelo = this.closest('.textoycarrito1').querySelector('h3').innerText;
-        let message = `Hola, me interesa el producto ${modelo} en talle ${talle}, categoría ${categoria}`;
-        let phone = '2241697504'; 
-
-        // Construir el enlace de WhatsApp con el mensaje
-        let appLink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
-        // Abre WhatsApp directamente en la aplicación móvil
-        window.location.href = appLink;
-    });
-});
-
+// Inicialización de Select2
 $(document).ready(function() {
-    // Asegurémonos de inicializar Select2 correctamente
     $('.talle-selector').select2({
-        minimumResultsForSearch: Infinity,  // Desactiva la barra de búsqueda
-        width: '100%'  // Asegúrate de que tenga un ancho correcto si es necesario
+        minimumResultsForSearch: Infinity,
+        width: 'resolve'
     });
 });
-
-
-
