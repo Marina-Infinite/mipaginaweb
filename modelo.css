@@ -274,6 +274,19 @@ nav {
 /* Responsive Design */
 
 
+@media (max-width: 768px) {
+
+ h1 {
+  font-size:x-large;
+ }
+
+ p {
+  font-size:medium;
+ }
+
+}
+
+
   /* Responsive Design */
 @media (max-width: 768px) {
 
@@ -281,7 +294,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    padding: 0 1rem; /* padding interno controlado */
     overflow-x: hidden;
   }
 
@@ -641,7 +654,7 @@ button:active {
   margin: auto;
   justify-content: center;
   margin-bottom: 3%;
-  margin-top: 3%;
+  margin-top: 6%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 15px;
   border-radius: 10px;
