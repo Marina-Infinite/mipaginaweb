@@ -33,6 +33,60 @@
             display: none;
         }
 
+            /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            margin-right: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 4rem auto 6rem auto;
+            padding: 0 1rem;
+        }
+
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .modelos {
@@ -194,22 +248,22 @@
                     <ul>
                         <li class="alineo">
                             <img src="img/home.png" alt="imghome">
-                            <a href="index.html"><b>Inicio</b></a>
+                            <a href="index.html">Inicio</a>
                         </li>
                         <div class="adorno"></div>
                         <li>
                             <img src="img/sobre.nosotros.png" alt="img2">
-                            <a href="sobrenosotras.html"><b>Sobre Nosotros</b></a>
+                            <a href="sobrenosotras.html">Sobre Nosotros</a>
                         </li>
                         <div class="adorno"></div>
                         <li>
                             <img src="img/talles.png" alt="img3">
-                            <a href="talles.html"><b>Talles</b></a>
+                            <a href="talles.html">Talles</a>
                         </li>
                         <div class="adorno"></div>
                         <li>
                             <img src="img/contacto2.png" alt="imgcontacto">
-                            <a href="contacto.html"><b>Contacto</b></a>
+                            <a href="contacto.html">Contacto</a>
                         </li>
                         <div class="adorno"></div>
                     </ul>
