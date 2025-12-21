@@ -139,7 +139,7 @@
                 padding: 10px 20px;
                 cursor: pointer;
                 text-align: center;
-              
+                font-size: larger;
                 transition: background-color 0.3s ease;
 
                 margin: 0 auto;
@@ -286,7 +286,7 @@
 
         <div class="linea izquierda espacio1">
 
-            <h1 style="text-align: left; margin: 2rem 0; color: #333;" class=".mali-bold ">Nuestros modelos</h1>
+            <h2 style="text-align: left; margin: 2rem 0; color: #333;" class=".mali-bold ">Nuestros modelos</h2>
         </div>
 
 
@@ -580,45 +580,14 @@
             <span class="dot" data-index="3"></span>
         </div>
     </main>
-    <script>
-        $(document).ready(function () {
-            if (window.innerWidth <= 768) {
-                if (!$('.featured-products').hasClass('slick-initialized')) {
-                    $('.featured-products').slick({
-                        dots: false, // Desactivamos los dots de Slick para usar los personalizados
-                        infinite: false,
-                        speed: 100,
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        arrows: false
-                    });
 
-                    // Evento de cambio de slide
-                    $('.featured-products').on('afterChange', function (event, slick, currentSlide) {
-                        updateDots(currentSlide);
-                    });
-
-                    // Click en dots personalizados
-                    $('.dot').on('click', function () {
-                        let index = $(this).data('index');
-                        $('.featured-products').slick('slickGoTo', index);
-                    });
-                }
-            }
-
-            // Función para actualizar los dots
-            function updateDots(index) {
-                $('.dot').removeClass('active');
-                $('.dot[data-index="' + index + '"]').addClass('active');
-            }
-        });
-    </script>
 
 
 
     <script src="boton.js"></script>
-    <script src="menu.js"></script>
-    <script src="script.js"></script>
+<script src="menu.js"></script>
+<script src="script.js"></script>
+
 
     <footer class="PC">
         <div class="footer-container">
@@ -697,4 +666,3 @@
 </body>
 
 </html>
-
