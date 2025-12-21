@@ -1,20 +1,72 @@
-$(document).ready(function() {
-    // Solo aplicar el carrusel en pantallas pequeñas
+console.log('🔵 script.js SE ESTÁ CARGANDO');
+
+$(document).ready(function () {
+    console.log('🟢 jQuery funciona');
+    console.log('📱 Ancho de pantalla:', window.innerWidth);
+    
     if (window.innerWidth <= 768) {
-        // Verifica si el carrusel ya fue inicializado
+        console.log('✅ Pantalla móvil detectada');
+        
         if (!$('.featured-products').hasClass('slick-initialized')) {
+            console.log('✅ Carrusel NO está inicializado aún');
+            
+            let initialSlide = 0;
+            let fullPath = window.location.href.toLowerCase();
+            let pathname = window.location.pathname.toLowerCase();
+            
+            console.log('🌐 URL completa:', fullPath);
+            console.log('📂 Pathname:', pathname);
+            
+            if (fullPath.includes('verano')) {
+                initialSlide = 2;
+                console.log('✓ VERANO detectado - Slide: 2');
+            } else if (fullPath.includes('intermedio')) {
+                initialSlide = 1;
+                console.log('✓ INTERMEDIO detectado - Slide: 1');
+            } else if (fullPath.includes('camisolin')) {
+                initialSlide = 3;
+                console.log('✓ CAMISOLINES detectado - Slide: 3');
+            } else if (fullPath.includes('invierno') || fullPath.includes('index')) {
+                initialSlide = 0;
+                console.log('✓ INVIERNO detectado - Slide: 0');
+            }
+            
+            console.log('🎯 initialSlide FINAL:', initialSlide);
+            
             $('.featured-products').slick({
-                dots: true, // Agrega puntos de navegación
-                infinite: false, // Desactiva el loop, no se podrá deslizar más allá del cuarto producto
-                speed: 300, // Velocidad de transición
-                slidesToShow: 1, // Número de productos que se muestran en cada slide
-                slidesToScroll: 1, // Número de productos que se desplazan a la vez
-                arrows: false, // Desactiva las flechas de navegación
+                dots: false,
+                infinite: false,
+                speed: 100,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                initialSlide: initialSlide
             });
+            
+            console.log('✅ Carrusel inicializado');
+            
+            $('.featured-products').on('afterChange', function (event, slick, currentSlide) {
+                updateDots(currentSlide);
+            });
+            
+            $('.dot').on('click', function () {
+                let index = $(this).data('index');
+                $('.featured-products').slick('slickGoTo', index);
+            });
+            
+            updateDots(initialSlide);
+        } else {
+            console.log('⚠️ Carrusel YA está inicializado');
         }
+    } else {
+        console.log('❌ Pantalla NO es móvil (ancho:', window.innerWidth, 'px)');
+    }
+    
+    function updateDots(index) {
+        $('.dot').removeClass('active');
+        $('.dot[data-index="' + index + '"]').addClass('active');
     }
 });
-
 
 function expandImage(box) {
     const isExpanded = box.classList.contains("expanded");
@@ -29,4 +81,3 @@ function expandImage(box) {
       box.classList.add("expanded");
     }
 }
-
