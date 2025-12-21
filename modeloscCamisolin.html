@@ -443,39 +443,7 @@
             <span class="dot" data-index="3"></span>
         </div>
     </main>
-    <script>
-        $(document).ready(function () {
-            if (window.innerWidth <= 768) {
-                if (!$('.featured-products').hasClass('slick-initialized')) {
-                    $('.featured-products').slick({
-                        dots: false, // Desactivamos los dots de Slick para usar los personalizados
-                        infinite: false,
-                        speed: 100,
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        arrows: false
-                    });
-
-                    // Evento de cambio de slide
-                    $('.featured-products').on('afterChange', function (event, slick, currentSlide) {
-                        updateDots(currentSlide);
-                    });
-
-                    // Click en dots personalizados
-                    $('.dot').on('click', function () {
-                        let index = $(this).data('index');
-                        $('.featured-products').slick('slickGoTo', index);
-                    });
-                }
-            }
-
-            // Función para actualizar los dots
-            function updateDots(index) {
-                $('.dot').removeClass('active');
-                $('.dot[data-index="' + index + '"]').addClass('active');
-            }
-        });
-    </script>
+    
 
 
 
