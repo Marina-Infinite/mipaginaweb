@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Descubre nuestra colección de pijamas de mujer cómodos y lindos. Encuentra conjuntos de pijamas de modal, ideales para invierno, media estacion y verano.">
+    <meta name="description"
+        content="Descubre nuestra colección de pijamas de mujer cómodos y lindos. Encuentra conjuntos de pijamas de modal, ideales para invierno, media estacion y verano.">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pijamas de Mujer Cómodos y Lindos | Conjuntos de Pijamas | Pijamas Infinite</title>
@@ -18,8 +19,7 @@
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <style>
-
-       /* Header Styles */
+        /* Header Styles */
         header {
             background-color: var(--primary-color);
             padding: 1rem;
@@ -32,7 +32,7 @@
             align-items: center;
         }
 
-       
+
 
         nav {
             display: flex;
@@ -73,127 +73,75 @@
 
 
 
-        /* Cover Section */
-        .cover {
-            height: 80vh;
-            background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)),
-                url('img/Portada.png') center/cover;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
 
-        .cover-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            min-height: 4rem;
-        }
 
-        .cover-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
 
-        /* Animación de palabras */
-        .word1 {
-            opacity: 0;
+        /* Botón Ver Pijamas */
+        .btn-ver-pijamas {
+            background-color: #F8A2B3;
+            color: #333;
+            padding: 12px 35px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             display: inline-block;
-            margin: 0 0.3rem;
-            animation: fadeInOut 0.6s ease-in-out forwards;
+            width: auto;
         }
 
- 
+        .btn-ver-pijamas:hover {
+            background-color: #FECED3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
 
+        @media (max-width: 768px) {
 
-        @keyframes fadeInOut {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
+            /* Ajustar tamaño del texto en portada */
+            .cover-content h1 {
+                font-size: 2.2rem;
+                /* Reducido de 2.7rem */
+                margin-top: 8rem;
+                /* Reducido para que no esté tan abajo */
+                margin-bottom: 1rem;
             }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
+
+            /* Ajustar botón para que quede dentro de la portada */
+            .btn-ver-pijamas {
+                font-size: 1rem;
+                padding: 15px 30px;
+                margin-top: 1.5rem;
+                margin-bottom: 2rem;
+                /* Espacio antes del final de la sección */
+            }
+
+            /* Asegurar que la portada tenga altura suficiente */
+            .cover {
+                height: 85vh;
+                /* Aumentado de 80vh para dar más espacio */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
         }
 
-        .word1.fade-out {
-            animation: fadeOut 0.4s ease-in-out forwards;
-        }
-
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-                transform: translateY(0);
+        /* Para pantallas más pequeñas (celulares pequeños) */
+        @media (max-width: 390px) {
+            .cover-content h1 {
+                font-size: 2.2rem;
+                /* Aún más pequeño en celulares chicos */
+                margin-top: 6rem;
             }
-            100% {
-                opacity: 0;
-                transform: translateY(-20px);
+
+            .btn-ver-pijamas {
+                font-size: 1rem;
+                padding: 12px 25px;
             }
         }
-
-  /* Botón Ver Pijamas */
-.btn-ver-pijamas {
-    background-color: #F8A2B3;
-    color: #333;
-    padding: 12px 35px;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    display: inline-block;
-    width: auto;
-}
-
-.btn-ver-pijamas:hover {
-    background-color: #FECED3;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 768px) {
-    /* Ajustar tamaño del texto en portada */
-    .cover-content h1 {
-        font-size: 2.2rem;  /* Reducido de 2.7rem */
-        margin-top: 8rem;   /* Reducido para que no esté tan abajo */
-        margin-bottom: 1rem;
-    }
-    
-    /* Ajustar botón para que quede dentro de la portada */
-    .btn-ver-pijamas {
-        font-size: 1rem;
-        padding: 15px 30px;
-        margin-top: 1.5rem;
-        margin-bottom: 2rem; /* Espacio antes del final de la sección */
-    }
-    
-    /* Asegurar que la portada tenga altura suficiente */
-    .cover {
-        height: 85vh; /* Aumentado de 80vh para dar más espacio */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-}
-
-/* Para pantallas más pequeñas (celulares pequeños) */
-@media (max-width: 390px) {
-    .cover-content h1 {
-        font-size: 2.2rem;  /* Aún más pequeño en celulares chicos */
-        margin-top: 6rem;
-    }
-    
-    .btn-ver-pijamas {
-        font-size: 1rem;
-        padding: 12px 25px;
-    }
-}
 
 
 
@@ -260,6 +208,36 @@
             font-weight: bold;
             color: var(--accent-color);
         }
+
+
+        /* Estilos para los puntos del Hero Slider */
+        .hero-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .hero-dot {
+            width: 10px;
+            height: 10px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            /* Para el efecto extensible */
+            cursor: pointer;
+        }
+
+        .hero-dot.active {
+            width: 30px;
+            /* Punto extensible */
+            background-color: #F8A2B3;
+            /* El color rosa de tu marca */
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -300,7 +278,7 @@
                         </li>
                         <div class="adorno"></div>
                         <li>
-                           <img src="img/sobre.nosotros.png">
+                            <img src="img/sobre.nosotros.png">
                             <a href="sobrenosotras.html">Sobre Nosotros</a>
                         </li>
 
@@ -322,22 +300,43 @@
 
     </header>
 
-    <section class="cover" id="home">
-        <div class="cover-content .mali-bold ">
-            <h1 class="mali-bold-italic verenmovil">
-                <span class="word1">Para</span>
-                <span class="word1">sentirte</span>
-                <span class="word1">linda</span>
-                <span class="word1">y</span>
-                <span class="word1">cómoda</span>
-                <span class="word1">en</span>
-                <span class="word1">casa</span>
-                
-                
-            </h1>
+    <section class="hero-slider" id="home">
+        <div class="slide active">
+            <img src="img/Portada.png" alt="Nueva Colección" class="slide-bg">
+            <div class="cover-content">
+                <h1 class="animar mali-bold-italic">Los pijamas más lindos</h1>
+                <p class="animar poppins-regular">Para sentirte linda y cómoda en casa.</p>
+                <button class="btn-ver-pijamas" onclick="scrollToProducts()">Ver Colección</button>
+            </div>
         </div>
-        <button class="btn-ver-pijamas" onclick="scrollToProducts()">Ver Pijamas</button>
+
+        <div class="slide">
+            <img src="img/envios.jpg" alt="Envíos a todo el país" class="slide-bg">
+            <div class="cover-content">
+                <h1 class="animar mali-bold-italic">Envíos a todo el país</h1>
+                <p class="animar poppins-regular">Recibí tu pedido en la puerta de tu casa o retirá gratis.</p>
+                <button class="btn-ver-pijamas" onclick="scrollToProducts()">Ver Colección</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="img/pagos.jpg" alt="Formas de pago" class="slide-bg">
+            <div class="cover-content">
+                <h1 class="animar mali-bold-italic">3 Cuotas sin interés</h1>
+                <p class="animar poppins-regular">Aceptamos todas las tarjetas y transferencia bancaria.</p>
+                <button class="btn-ver-pijamas" onclick="scrollToProducts()">Comprar ahora</button>
+            </div>
+        </div>
+
+        <div class="hero-indicators">
+            <span class="hero-dot active"></span>
+            <span class="hero-dot"></span>
+            <span class="hero-dot"></span>
+        </div>
     </section>
+
+
+
 
     <main>
         <div class="linea izquierda">
@@ -350,7 +349,8 @@
                 <div class="product-image1"></div>
                 <div class="product-info poppins-regular">
                     <h3>Pijama de Invierno</h3>
-                    <p>Pijamas de modal premium con spandex, perfectas para mantenerte cálida y cómoda durante el invierno.</p>
+                    <p>Pijamas de modal premium con spandex, perfectas para mantenerte cálida y cómoda durante el
+                        invierno.</p>
                     <p class="price">$55.000</p>
                     <a href="invierno.html">
                         <button>
@@ -363,7 +363,8 @@
                 <div class="product-image2"></div>
                 <div class="product-info poppins-regular">
                     <h3>Pijama media-estación</h3>
-                    <p>Si te gusta el estilo largo abajo y corto arriba, estos pijamas son ideales para un look moderno y cómodo.</p>
+                    <p>Si te gusta el estilo largo abajo y corto arriba, estos pijamas son ideales para un look moderno
+                        y cómodo.</p>
                     <p class="price">$52.000</p>
                     <a href="intermedio.html">
                         <button>
@@ -376,7 +377,8 @@
                 <div class="product-image3"></div>
                 <div class="product-info poppins-regular">
                     <h3>Pijama de Verano</h3>
-                    <p>Modelos frescos, ligeros y cómodos, perfectos para disfrutar del calor sin perder el estilo ni la elegancia.</p>
+                    <p>Modelos frescos, ligeros y cómodos, perfectos para disfrutar del calor sin perder el estilo ni la
+                        elegancia.</p>
                     <p class="price">$45.000</p>
                     <a href="verano.html">
                         <button>
@@ -389,7 +391,8 @@
                 <div class="product-image4"></div>
                 <div class="product-info poppins-regular">
                     <h3>Camisolines</h3>
-                    <p>Prendas delicadas que brindan sensación de libertad, ideal para descansar con comodidad y estilo.</p>
+                    <p>Prendas delicadas que brindan sensación de libertad, ideal para descansar con comodidad y estilo.
+                    </p>
                     <p class="price">$42.000</p>
                     <a href="modeloscCamisolin.html">
                         <button>
@@ -399,8 +402,8 @@
                 </div>
             </div>
         </div>
-        
-        
+
+
 
         <div class="carousel-indicators">
             <span class="dot active" data-index="0"></span>
@@ -413,7 +416,7 @@
     <script>
         // Función para scroll suave al carrusel
         function scrollToProducts() {
-            document.getElementById('productos').scrollIntoView({ 
+            document.getElementById('productos').scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
@@ -502,6 +505,48 @@
         });
     </script>
 
+    <script>
+        let currentHeroSlide = 0;
+        const heroSlides = document.querySelectorAll('.hero-slider .slide');
+        const heroDots = document.querySelectorAll('.hero-dot');
+
+        function goToHeroSlide(index) {
+            // Quitar activo de todos
+            heroSlides[currentHeroSlide].classList.remove('active');
+            heroDots[currentHeroSlide].classList.remove('active');
+
+            // Actualizar índice actual
+            currentHeroSlide = index;
+
+            // Agregar activo al nuevo
+            heroSlides[currentHeroSlide].classList.add('active');
+            heroDots[currentHeroSlide].classList.add('active');
+        }
+
+        function nextHeroSlide() {
+            let nextIndex = (currentHeroSlide + 1) % heroSlides.length;
+            goToHeroSlide(nextIndex);
+        }
+
+        // Configurar el intervalo inicial
+        let heroInterval = setInterval(nextHeroSlide, 5000);
+
+        // Agregar el evento click a cada punto
+        heroDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                // 1. Cambiar al slide clickeado
+                goToHeroSlide(index);
+
+                // 2. Reiniciar el temporizador para que no cambie 
+                // inmediatamente después de hacer click
+                clearInterval(heroInterval);
+                heroInterval = setInterval(nextHeroSlide, 5000);
+            });
+        });
+    </script>
+
+
+
     <script src="menu.js"></script>
     <script src="script.js"></script>
 
@@ -520,7 +565,7 @@
                 <div class="tamicono poppins-regular">
                     <img src="img/email.png" alt="">
                     <p><a href="mailto:ventadepijamasmujer@gmail.com"
-                        style="color: #333;">ventadepijamasmujer@gmail.com</a>
+                            style="color: #333;">ventadepijamasmujer@gmail.com</a>
                     </p>
                 </div>
 
@@ -558,7 +603,7 @@
                 <div class="tamicono">
                     <img src="img/email.png" alt="">
                     <p><a href="mailto:ventadepijamasmujer@gmail.com"
-                        style="color: #333;">ventadepijamasmujer@gmail.com</a>
+                            style="color: #333;">ventadepijamasmujer@gmail.com</a>
                     </p>
                 </div>
 
@@ -582,6 +627,3 @@
 </body>
 
 </html>
-
-
-
