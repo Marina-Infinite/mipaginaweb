@@ -497,23 +497,104 @@ nav {
 
 
 
-button {
-  background: #FDCDD6;
-  color: #333;
-  border: none;
-  padding: 0.6rem;
-  border-radius: 50px;
-  width: 100%;
-  cursor: pointer;
-  transition: background 0.3s ease;
+/* --- ESTILOS DEL HERO SLIDER --- */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 85vh; /* Altura ideal para PC */
+    overflow: hidden;
+    background-color: #000;
 }
 
-button:hover {
-  background: #FEE3E8;
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-button:active {
-  background: #FECED3;
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ajuste para que la imagen no se vea tan estirada en móviles */
+    object-position: center; 
+    filter: brightness(0.6); 
+}
+
+.cover-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 0 5%;
+    max-width: 800px;
+}
+
+.cover-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family: "Mali", cursive; /* Usando tu tipografía de títulos */
+}
+
+.cover-content p {
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+}
+
+/* --- ANIMACIÓN DINÁMICA --- */
+.slide.active .animar {
+    animation: slideUp 1s ease-out forwards;
+}
+
+/* Estado inicial de la animación */
+.slide .animar {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Delay para el párrafo (aparece un poquito después) */
+.slide.active p.animar {
+    animation-delay: 0.3s;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- ADAPTACIÓN RESPONSIVE (MÓVIL) --- */
+@media (max-width: 768px) {
+    .hero-slider {
+        height: 70vh; /* Un poco más bajo en móvil para ver contenido abajo */
+    }
+
+    .cover-content h1 {
+        font-size: 2.2rem; /* Tamaño de letra más cómodo para celular */
+    }
+
+    .cover-content p {
+        font-size: 1.1rem;
+    }
+    
+    .slide-bg {
+        /* En móvil a veces conviene mover el foco de la foto */
+        object-position: 70% center; 
+    }
 }
 
 
@@ -639,9 +720,44 @@ button:active {
 
 
 
-/* sobre Nosotras--------------------------------------------------------------------------------------------------------------------- 
+/* carrusel --------------------------------------------------------------------------------------------------------------------- 
 
+/* Esto recupera el color y forma del botón de las categorías de pijamas */
+.product-info a button, 
+.product-card .boton {
+    background-color: #F8A2B3 !important; /* El rosa de tu marca */
+    color: #333 !important;
+    padding: 12px 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    display: inline-block;
+    width: 100%; /* Para que quede bien en el carrusel móvil */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
+.product-info a button:hover {
+    background-color: #FBC1CC !important;
+    transform: translateY(-2px);
+}
+
+/* Arreglo para el texto rosa que aparece al costado en los slides */
+.hero-slider .slide {
+    display: none; /* Oculta los slides por defecto */
+}
+
+.hero-slider .slide.active {
+    display: flex; /* Solo muestra el que tiene la clase active */
+}
+
+.slick-dots {
+    display: none !important;
+}
 
 
 
