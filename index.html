@@ -529,7 +529,7 @@
         }
 
         // Configurar el intervalo inicial
-        let heroInterval = setInterval(nextHeroSlide, 5000);
+        let heroInterval = setInterval(nextHeroSlide, 6000);
 
         // Agregar el evento click a cada punto
         heroDots.forEach((dot, index) => {
@@ -540,7 +540,7 @@
                 // 2. Reiniciar el temporizador para que no cambie 
                 // inmediatamente después de hacer click
                 clearInterval(heroInterval);
-                heroInterval = setInterval(nextHeroSlide, 5000);
+                heroInterval = setInterval(nextHeroSlide, 6000);
             });
         });
     </script>
@@ -627,3 +627,4 @@
 </body>
 
 </html>
+
