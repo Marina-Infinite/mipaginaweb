@@ -83,16 +83,6 @@
             align-items: start;
         }
 
-        .contacto-info h3 {
-            color: #333;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 0.8rem;
-            margin-bottom: 1rem;
-        }
-
         .bajada-texto {
             color: #666;
             font-size: 1rem;
@@ -105,7 +95,7 @@
             gap: 1.2rem;
         }
 
-        /* --- ANIMACIONES Y ESTILO DE ITEMS --- */
+        /* --- ITEMS DE REDES --- */
         .contacto-item {
             display: flex;
             align-items: center;
@@ -121,26 +111,14 @@
             width: 32px;
             height: 32px;
             object-fit: contain;
-            transition: transform 0.3s ease;
         }
 
-        /* Efecto Hover (PC) */
         @media (min-width: 769px) {
             .contacto-item:hover {
                 background-color: rgba(248, 162, 179, 0.1);
                 transform: translateX(10px);
                 color: var(--primary-color);
             }
-
-            .contacto-item:hover img {
-                transform: scale(1.1) rotate(5deg);
-            }
-        }
-
-        /* Efecto Clic / Presión (General) */
-        .contacto-item:active {
-            transform: scale(0.95);
-            background-color: rgba(248, 162, 179, 0.2);
         }
 
         /* --- FORMULARIO --- */
@@ -162,24 +140,13 @@
         .campo label {
             font-weight: bold;
             color: #555;
-            font-size: 0.95rem;
         }
 
-        .campo input,
-        .campo textarea {
+        .campo input, .campo textarea {
             padding: 14px;
             border: 1px solid #eee;
-            background-color: #fdfdfd;
             border-radius: 10px;
-            font-family: inherit;
             width: 100%;
-            transition: border-color 0.3s;
-        }
-
-        .campo input:focus,
-        .campo textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
         }
 
         .btn-enviar {
@@ -191,13 +158,28 @@
             font-weight: bold;
             cursor: pointer;
             width: 100%;
-            transition: all 0.3s;
         }
 
-        .btn-enviar:hover {
-            background-color: #e58a9d;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(248, 162, 179, 0.3);
+        /* --- LÓGICA DE VISIBILIDAD DE TÍTULOS --- */
+        .solo-mobile { display: none !important; }
+        
+        .titulo-con-linea {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .titulo-con-linea h2 {
+            margin: 0 !important;
+            white-space: nowrap;
+        }
+
+        .linea-gris {
+            flex-grow: 1;
+            height: 1px;
+            background-color: #ddd;
+            margin-left: 15px;
         }
 
         /* --- FOOTER --- */
@@ -215,10 +197,6 @@
             gap: 2rem;
         }
 
-        .footer-logo img {
-            height: 60px;
-        }
-
         .footer-divider {
             width: 1px;
             height: 50px;
@@ -228,52 +206,28 @@
         .copyright {
             text-align: center;
             margin-top: 2rem;
-            font-size: 0.9rem;
         }
 
-        /* --- MEDIA QUERIES (MOBILE - ESPACIADO MEJORADO) --- */
+        /* --- MEDIA QUERIES (MOBILE) --- */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+            .nav-links { display: none; }
+            
+    
 
             .contacto-container {
                 display: flex;
                 flex-direction: column;
-                /* Aumentamos el espacio general entre bloques */
                 gap: 5rem;
             }
 
-            /* Formulario primero */
-            .contacto-formulario {
-                order: 1;
-                padding: 1.5rem;
-                width: 100%;
-            }
+            .contacto-formulario { order: 1; padding: 1.5rem; }
+            .contacto-info { order: 2; }
 
-            /* Sección de Redes abajo con espacio extra */
-            .contacto-info {
-                order: 2;
-                text-align: left;
-                width: 100%;
-                /* Margen superior extra por si el gap no es suficiente */
-                margin-top: 0.5rem;
-            }
-
-            /* Bloque de los @ centrado pero alineado internamente */
             .redes-lista {
-                display: flex;
-                flex-direction: column;
                 align-items: flex-start;
                 width: fit-content;
                 margin: 2rem auto 0 auto;
-                /* Más aire arriba de los iconos */
                 gap: 1.5rem;
-                /* Más espacio entre Instagram y Facebook */
-            }
-
-            .contacto-item {
-                width: auto;
             }
         }
     </style>
@@ -307,13 +261,11 @@
                     <ul>
                         <li class="alineo"><img src="img/home.png" alt=""><a href="index.html">Inicio</a></li>
                         <div class="adorno"></div>
-                        <li><img src="img/sobre.nosotros.png" alt=""><a href="sobrenosotras.html">Sobre Nosotros</a>
-                        </li>
+                        <li><img src="img/sobre.nosotros.png" alt=""><a href="sobrenosotras.html">Sobre Nosotros</a></li>
                         <div class="adorno"></div>
                         <li><img src="img/talles.png" alt=""><a href="talles.html">Talles</a></li>
                         <div class="adorno"></div>
-                        <li class="destacado"><img src="img/contacto2.png" alt=""><a href="contacto.html">Contacto</a>
-                        </li>
+                        <li class="destacado"><img src="img/contacto2.png" alt=""><a href="contacto.html">Contacto</a></li>
                         <div class="adorno"></div>
                     </ul>
                 </div>
@@ -328,9 +280,10 @@
 
         <div class="contacto-container">
             <div class="contacto-info">
-                <div class="linea izquierda espacio">
-                    <h2 style="text-align: left; margin-bottom: 1rem; color: #333;" class="mali-bold">Redes</h2>
+                <div class="espacio">
+                    <h2 style="text-align: left; margin-bottom: 1rem; color: #333;" class="mali-bold">¡Nuestras redes!</h2>
                 </div>
+
                 <p class="bajada-texto poppins-regular">Encontraras publicaciones y las novedades</p>
 
                 <div class="redes-lista">
@@ -338,8 +291,7 @@
                         <img src="img/instagram.png" alt="Instagram">
                         <span class="poppins-regular">@marina.infinite</span>
                     </a>
-                    <a href="https://www.facebook.com/profile.php?id=61560316620234" target="_blank"
-                        class="contacto-item">
+                    <a href="https://www.facebook.com/profile.php?id=61560316620234" target="_blank" class="contacto-item">
                         <img src="img/facebook.png" alt="Facebook">
                         <span class="poppins-regular">Marina Infinite</span>
                     </a>
@@ -373,11 +325,9 @@
             </div>
             <div class="footer-divider"></div>
             <div class="footer-info">
-                <div class="tamicono poppins-regular"
-                    style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+                <div class="tamicono poppins-regular" style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
                     <img src="img/email.png" alt="" style="width: 20px;">
-                    <p><a href="mailto:ventadepijamasmujer@gmail.com"
-                            style="color: #333; text-decoration: none;">ventadepijamasmujer@gmail.com</a></p>
+                    <p><a href="mailto:ventadepijamasmujer@gmail.com" style="color: #333; text-decoration: none;">ventadepijamasmujer@gmail.com</a></p>
                 </div>
                 <div class="tamicono poppins-regular" style="display: flex; gap: 10px; align-items: center;">
                     <img src="img/ubicacion.png" alt="" style="width: 20px;">
@@ -392,23 +342,19 @@
 
     <script src="menu.js"></script>
     <script src="script.js"></script>
-
     <script>
         function enviarMail() {
             const nombre = document.getElementById('nombre').value;
             const emailUser = document.getElementById('email').value;
             const mensaje = document.getElementById('mensaje').value;
-            const miEmail = "ventadepijamasmujer@gmail.com";
-
             if (nombre && emailUser && mensaje) {
                 const asunto = encodeURIComponent(`Consulta Web de ${nombre}`);
                 const cuerpo = encodeURIComponent(`Nombre: ${nombre}\nEmail: ${emailUser}\nMensaje: ${mensaje}`);
-                window.location.href = `mailto:${miEmail}?subject=${asunto}&body=${cuerpo}`;
+                window.location.href = `mailto:ventadepijamasmujer@gmail.com?subject=${asunto}&body=${cuerpo}`;
             } else {
                 alert("Por favor, completa todos los campos.");
             }
         }
     </script>
 </body>
-
 </html>
